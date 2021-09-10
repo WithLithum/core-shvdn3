@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WithLithum.Core.Shvdn3.Exceptions;
+using WithLithum.Core.Exceptions;
 
-namespace WithLithum.Core.Shvdn3.PedModel.Appearance
+namespace WithLithum.Core.PedModel.Appearance
 {
     /// <summary>
     /// Provides methods and functions to manipulate ped head blend.

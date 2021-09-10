@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GTA;
 using GTA.Native;
 
-namespace WithLithum.Core.Shvdn3.PedModel.Appearance
+namespace WithLithum.Core.PedModel.Appearance
 {
     /// <summary>
     /// Provides utilties to manipulate a specific face feature of freemode model head blends.

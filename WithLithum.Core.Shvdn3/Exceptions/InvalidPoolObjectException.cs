@@ -1,7 +1,7 @@
 ﻿using System;
 using GTA;
 
-namespace WithLithum.Core.Shvdn3.Exceptions
+namespace WithLithum.Core.Exceptions
 {
     /// <summary>
     /// Thrown when a method, constructor, operation or property that requires a valid <see cref="PoolObject"/> receives invalid <see cref="PoolObject"/>,

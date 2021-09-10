@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using GTA;
 using GTA.Native;
-using WithLithum.Core.Shvdn3.Exceptions;
+using WithLithum.Core.Exceptions;
 
-namespace WithLithum.Core.Shvdn3.PedModel.Appearance
+namespace WithLithum.Core.PedModel.Appearance
 {
     /// <summary>
     /// Provides head blend customization to model <see cref="PedHash.FreemodeMale01"/> and <see cref="PedHash.FreemodeFemale01"/>.
