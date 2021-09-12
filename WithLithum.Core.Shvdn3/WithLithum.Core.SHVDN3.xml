@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WithLithum.Core.SHVDN3</name>
+    </assembly>
+    <members>
+        <member name="T:WithLithum.Core.Exceptions.InvalidPoolObjectException">
+            <summary>
+            Thrown when a method, constructor, operation or property that requires a valid <see cref="T:GTA.PoolObject"/> receives invalid <see cref="T:GTA.PoolObject"/>,
+            or the object itself containing the property have it's handle invalidated.
+            </summary>
+            <remarks>
+            <para><see cref="T:GTA.PoolObject"/>s have an unique identifier in the pool (a special <see cref="T:System.Array"/> used by RAGE Engine), consists of an <b>index</b> and a <b>counter</b>.
+            When a handle no longer represents a valid object inside the pool, it will be considered invalid, which <see cref="M:GTA.PoolObject.Exists"/> will return <see langword="false"/>.</para>
+            <para>Note that this exception will not be thrown if the object was <see langword="null"/>; Instead, <see cref="T:System.NullReferenceException"/> or <see cref="T:System.ArgumentNullException"/> will be
+            thrown.</para>
+            </remarks>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.Appearance.FaceFeature">
+            <summary>
+            Provides utilties to manipulate a specific face feature of freemode model head blends.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.FaceFeature.Type">
+            <summary>
+            Gets the type of the feature that is manipulate by this instance.
+            </summary>
+            <value>
+            The type of this instance.
+            </value>
+        </member>
+        <member name="M:WithLithum.Core.PedModel.Appearance.FaceFeature.SetValue(System.Single)">
+            <summary>
+            Sets the value of this instance.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.Appearance.FaceFeatureType">
+            <summary>
+            An enumeration of all possible face feature types.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.NoseWidth">
+            <summary>
+            The width of the nose. Set to <c>-1.0</c> for narrow, <c>1.0</c> for wide.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.NoseHeight">
+            <summary>
+            The height of the nose. Set to <c>-1.0</c> for top, <c>1.0</c> for bottom.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.NoseLength">
+            <summary>
+            The length of the nose. Set to <c>-1.0</c> for grand, <c>1.0</c> for petite.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.NoseBridge">
+            <summary>
+            The nose bridge. Set to <c>-1.0</c> for round, <c>1.0</c> for hollow.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.NoseTip">
+            <summary>
+            The tip of the nose. Set to <c>-1.0</c> for upward, <c>1.0</c> for downward.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.NoseBridgeShift">
+            <summary>
+            The shift of the nose bridge. Set to <c>-1.0</c> to shift left, <c>1.0</c> to shift right.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.BrowHeight">
+            <summary>
+            The height of the brow. Set to <c>-1.0</c> for top, <c>1.0</c> for bottom.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.BrowWidth">
+            <summary>
+            The width of the brow. Set to <c>-1.0</c> for inward, <c>1.0</c> for outward.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.CheekboneHeight">
+            <summary>
+            The height of the cheekbone. Set to <c>-1.0</c> for top, <c>1.0</c> for bottom.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.CheekboneWidth">
+            <summary>
+            The width of the cheekbone. Set to <c>-1.0</c> for narrow, <c>1.0</c> for wide.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.CheeksWidth">
+            <summary>
+            The width of the cheeks. Set to <c>-1.0</c> for wide, <c>1.0</c> for narrow.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.Eyes">
+            <summary>
+            The size of the eyes. Set to <c>-1.0</c> for fully opened eyes, <c>1.0</c> for nearly closed eyes.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.Lips">
+            <summary>
+            The thicknes of the lips. Set to <c>-1.0</c> for wide, <c>1.0</c> for narrow.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.JawWidth">
+            <summary>
+            The width of the jaw. Set to <c>-1.0</c> for narrow, <c>1.0</c> for wide.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.JawHeight">
+            <summary>
+            The height of the cheekbone. Set to <c>-1.0</c> for top, <c>1.0</c> for bottom.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.ChinLength">
+            <summary>
+            The length of the chin. Set to <c>-1.0</c> for small chin, <c>1.0</c> for long chin.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.ChinPosition">
+            <summary>
+            The position of the chin. Set to <c>-1.0</c> for inward, <c>1.0</c> for outward.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.ChinWidth">
+            <summary>
+            The width of the chin. Set to <c>-1.0</c> for narrow, <c>1.0</c> for grand.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.ChinShape">
+            <summary>
+            The shape of the jaw. Set to <c>-1.0</c> for simple chin, <c>1.0</c> for double chin.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.FaceFeatureType.NeckWidth">
+            <summary>
+            The width of the neck. Set to <c>-1.0</c> for narrow, <c>1.0</c> for wide.
+            </summary>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.Appearance.HeadBlend">
+            <summary>
+            Provides methods and functions to manipulate ped head blend.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother">
+            <summary>
+            Gets or sets the mother to manipulate shape of this instance.
+            </summary>
+            <remarks>
+            Parents (mother and fathers) shares the same registry, so it's possible to set Mother and Father to the same value.
+            </remarks>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather">
+            <summary>
+            Gets or sets the father to manipulate shape of this instance.
+            </summary>
+            <remarks>
+            Parents (mother and fathers) shares the same registry, so it's possible to set Mother and Father to the same value.
+            </remarks>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.SkinMother">
+            <summary>
+            Gets or sets the mother to manipulate skin of this instance.
+            </summary>
+            <remarks>
+            Parents (mother and fathers) shares the same registry, so it's possible to set Mother and Father to the same value.
+            </remarks>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.SkinFather">
+            <summary>
+            Gets or sets the father to manipulate skin of this instance.
+            </summary>
+            <remarks>
+            Parents (mother and fathers) shares the same registry, so it's possible to set Mother and Father to the same value.
+            </remarks>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeExtraFactor">
+            <summary>
+            Gets or sets the extra factor of the shape.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.SkinExtraFactor">
+            <summary>
+            Gets or sets the extra factor of the skin.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.MixExtraFactor">
+            <summary>
+            Gets or sets the extra factor when mixing skin and shapes.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.PedModel.Appearance.HeadBlend.Apply">
+            <summary>
+            Applies the configuration of this instance to the ped.
+            </summary>
+            <remarks>
+            It is impossible to set values directly as we cannot read these. Thus, you'll need to set the values first, then
+            apply it using this method.
+            </remarks>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer">
+            <summary>
+            Provides head blend customization to model <see cref="F:GTA.PedHash.FreemodeMale01"/> and <see cref="F:GTA.PedHash.FreemodeFemale01"/>.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.#ctor(GTA.Ped)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> class.
+            </summary>
+            <param name="ped">The ped to customize.</param>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.BasePed">
+            <summary>
+            Gets the ped of this instance.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.Blend">
+            <summary>
+            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend"/> which can be used to manipulate head blend data of this instance.
+            </summary>
+            <value>
+            An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend"/> which can be used to manipulate head blend data of this instance.
+            </value>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.Item(WithLithum.Core.PedModel.Appearance.FaceFeatureType)">
+            <summary>
+            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature"/> based on the specified <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeatureType"/>.
+            </summary>
+            <param name="type">The type of the face feature.</param>
+            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature"/> which can be used to change the value of a specified face feature.</returns>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.Appearance.HeadBlendParent">
+            <summary>
+            An enumeration of all possible parents in head blend configuration.
+            </summary>
+            <remarks>
+            <note type="important">This list may not be accurate, because this list is simply chronologically ordered instead of tested actually.<br />
+            For more information, see <see href="https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset_ped_head_blend_data-explained">this topic</see> on GTAForums.</note>
+            </remarks>
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend"/>
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.Appearance.HeadOverlay">
+            <summary>
+            Provides methods and properties to manipulate head overlay.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Opacity">
+            <summary>
+            Gets or sets the opacity used when setting <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index"/> next time. This value will not be effective until next call to <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index"/>'s setter.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index">
+            <summary>
+            Gets the index of this instance.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> or it's <see cref="T:GTA.Ped"/> was null, or when <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.BasePed"/> was invalid.</exception>
+        </member>
+        <member name="M:WithLithum.Core.PedModel.Appearance.HeadOverlay.SetColor(System.Int32,System.Int32)">
+            <summary>
+            Sets the color of this instance. Recommended to call right after setting <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index"/>. The type of the color is automatically determined based on <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType"/>.
+            </summary>
+            <param name="firstId">The first color Id.</param>
+            <param name="secondId">The second color Id.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType"/> of this instance does not allow colors, or when <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>'s ped was null.</exception>
+            <exception cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException">Thrown when the ped of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> of this instance invalidates.</exception>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType">
+            <summary>
+            An enumeration of all possible head overlay types.
+            </summary>
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay"/>
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>
+        </member>
+        <member name="T:WithLithum.Core.PedModel.PedExtensions">
+            <summary>
+            Provide extension methods to <see cref="T:GTA.Ped"/> class.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.PedModel.PedExtensions.HeadBlend(GTA.Ped)">
+            <summary>
+            Receives an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> which can be used to edit the face features,
+            head blend datas, etc. of this instance.
+            </summary>
+            <param name="ped">The ped.</param>
+            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>. Multiple calls with the same ped are not guaranteed to return the same instance.</returns>
+        </member>
+    </members>
+</doc>
