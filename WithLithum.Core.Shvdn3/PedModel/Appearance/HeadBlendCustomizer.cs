@@ -77,10 +77,5 @@ namespace WithLithum.Core.PedModel.Appearance
         /// <param name="type">The type of the face feature.</param>
         /// <returns>An instance of <see cref="FaceFeature"/> which can be used to change the value of a specified face feature.</returns>
         public FaceFeature this[FaceFeatureType type] => _features[type];
-
-        internal void SetHeadBlendInternal(int shapeFirstID, int shapeSecondID, int shapeThirdID, int skinFirstID, int skinSecondID, int skinThirdID, float shapeMix, float skinMix, float thirdMix, bool isParent)
-        {
-            Function.Call(Hash.SET_PED_HEAD_BLEND_DATA, BasePed, shapeFirstID, shapeSecondID, shapeThirdID, skinFirstID, skinSecondID, skinThirdID, shapeMix, skinMix, thirdMix, isParent);
-        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GTA.Native;
 using WithLithum.Core.Exceptions;
 
 namespace WithLithum.Core.PedModel.Appearance
@@ -130,7 +131,7 @@ namespace WithLithum.Core.PedModel.Appearance
         /// </remarks>
         public void Apply()
         {
-            _blendCustomizer.SetHeadBlendInternal((int)ShapeMother, (int)ShapeFather, ShapeExtraFactor, (int)SkinMother, (int)SkinFather, SkinExtraFactor, ShapeMix, SkinMix, MixExtraFactor, false);
+            Function.Call(Hash.SET_PED_HEAD_BLEND_DATA, _blendCustomizer.BasePed, (int)ShapeMother, (int)ShapeFather, ShapeExtraFactor, (int)SkinMother, (int)SkinFather, SkinExtraFactor, ShapeMix, SkinMix, MixExtraFactor, false);
         }
     }
 }
