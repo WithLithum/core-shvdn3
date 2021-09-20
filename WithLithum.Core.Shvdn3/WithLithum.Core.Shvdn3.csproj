@@ -16,11 +16,16 @@
     <Version>0.1.1</Version>
     <RootNamespace>WithLithum.Core</RootNamespace>
     <AssemblyName>WithLithum.Core.SHVDN3</AssemblyName>
+    <CodeAnalysisRuleSet>..\.sonarlint\withlithum_core-shvdn3csharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>C:\Programs\DevProjs\core-shvdn3\WithLithum.Core.Shvdn3\WithLithum.Core.SHVDN3.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\.sonarlint\withlithum_core-shvdn3\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ScriptHookVDotNet3" Version="3.1.0" />
