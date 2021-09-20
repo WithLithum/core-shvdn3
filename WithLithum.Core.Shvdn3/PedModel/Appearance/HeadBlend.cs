@@ -63,6 +63,13 @@ namespace WithLithum.Core.PedModel.Appearance
         /// </remarks>
         public HeadBlendParent SkinFather { get; set; }
 
+        /// <summary>
+        /// Gets or sets the genetic bias between <see cref="ShapeMother"/> and <see cref="ShapeFather"/> on the head base shape.
+        /// </summary>
+        /// <value>
+        /// The genetic bias between <see cref="ShapeMother"/> and <see cref="ShapeFather"/>. Must between 1.0 and -1.0 (otherwise an exception will be thrown).
+        /// If set to 1.0, the head base shape of the ped will follow <see cref="ShapeMother"/>; if set to -1.0, it will follow <see cref="ShapeFather"/> instead.
+        /// </value>
         public float ShapeMix
         {
             get => _shapeMix;
@@ -77,6 +84,14 @@ namespace WithLithum.Core.PedModel.Appearance
             }
         }
 
+        /// <summary>
+        /// Gets or sets the genetic bias between <see cref="ShapeMother"/> and <see cref="ShapeFather"/> on the skin color (tone).
+        /// </summary>
+        /// <value>
+        /// The genetic bias between <see cref="ShapeMother"/> and <see cref="ShapeFather"/>. Must between 1.0 and -1.0 (otherwise an exception will be thrown).
+        /// If set to 1.0, the skin color (tone) of the ped will follow <see cref="ShapeMother"/>; if set to -1.0, it will follow <see cref="ShapeFather"/> instead.
+        /// </value>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the specified value out of range of <c>1.0f</c> and <c>-1.0f</c>.</exception>
         public float SkinMix
         {
             get => _skinMix;
