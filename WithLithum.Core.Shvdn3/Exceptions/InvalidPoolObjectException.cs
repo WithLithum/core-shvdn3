@@ -16,10 +16,34 @@ namespace WithLithum.Core.Exceptions
     [Serializable]
     public class InvalidPoolObjectException : Exception
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/> class.
+        /// </summary>
         public InvalidPoolObjectException() { }
+
+
+        /// <summary>Initializes a new instance of the <see cref="InvalidPoolObjectException"/> with specified message.</summary>
+        /// <param name="message">The message which describes the exception.</param>
         public InvalidPoolObjectException(string message) : base(message) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/> with the specified object.
+        /// </summary>
+        /// <param name="poolObject">The object.</param>
         public InvalidPoolObjectException(PoolObject poolObject) : base($"The specified {poolObject.GetType().Name} was invalid.") { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/>.
+        /// </summary>
+        /// <param name="message">The message which describes the exception.</param>
+        /// <param name="inner">The inner exception.</param>
         public InvalidPoolObjectException(string message, Exception inner) : base(message, inner) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/>.
+        /// </summary>
+        /// <param name="info">The information.</param>
+        /// <param name="context">The context.</param>
         protected InvalidPoolObjectException(
           System.Runtime.Serialization.SerializationInfo info,
           System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
