@@ -9,7 +9,11 @@
   "Profiles": {
     "CSharp": {
       "ProfileKey": "AXwDCot46KaV2XQQHNpm",
-      "ProfileTimestamp": "2021-05-05T07:40:20Z"
+      "ProfileTimestamp": "2021-10-27T09:08:11Z"
+    },
+    "VB": {
+      "ProfileKey": "AXwDCot56KaV2XQQHNp8",
+      "ProfileTimestamp": "2021-05-05T07:38:59Z"
     }
   }
 }
