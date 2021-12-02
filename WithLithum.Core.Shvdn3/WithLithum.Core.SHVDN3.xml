@@ -16,6 +16,249 @@
             thrown.</para>
             </remarks>
         </member>
+        <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/> class.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/> with specified message.</summary>
+            <param name="message">The message which describes the exception.</param>
+        </member>
+        <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(GTA.PoolObject)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/> with the specified object.
+            </summary>
+            <param name="poolObject">The object.</param>
+        </member>
+        <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/>.
+            </summary>
+            <param name="message">The message which describes the exception.</param>
+            <param name="inner">The inner exception.</param>
+        </member>
+        <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/>.
+            </summary>
+            <param name="info">The information.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:WithLithum.Core.Logging.Logger">
+            <summary>
+            Provides logging features to GTA scripts.
+            </summary>
+            <remarks>
+            Logger instances are created by <see cref="T:WithLithum.Core.Logging.LogManager"/>.
+            </remarks>
+        </member>
+        <member name="F:WithLithum.Core.Logging.Logger.TraceLevel">
+            <summary>
+            The text for trace level.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.Logging.Logger.DebugLevel">
+            <summary>
+            The text for debug level.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.Logging.Logger.InformationLevel">
+            <summary>
+            The text for information level.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.Logging.Logger.WarningLevel">
+            <summary>
+            The text for warning level.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.Logging.Logger.ErrorLevel">
+            <summary>
+            The text for error level.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.Logging.Logger.FatalLevel">
+            <summary>
+            The text for fatal level.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.Logging.Logger.Name">
+            <summary>
+            Gets the name of this <see cref="T:WithLithum.Core.Logging.Logger"/>.
+            </summary>
+            <value>
+            The name of this instance.
+            </value>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Log(System.String,System.String)">
+            <summary>
+            Logs the specified information into the log file.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="level">The level.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Trace(System.String)">
+            <summary>
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel"/>.
+            </summary>
+            <param name="text">The text to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Trace(System.Exception)">
+            <summary>
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel"/>.
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Trace(System.Object)">
+            <summary>
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel"/>.
+            </summary>
+            <param name="obj">The obj to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Debug(System.String)">
+            <summary>
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel"/>.
+            </summary>
+            <param name="text">The text to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Debug(System.Exception)">
+            <summary>
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel"/>.
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Debug(System.Object)">
+            <summary>
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel"/>.
+            </summary>
+            <param name="obj">The obj to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Information(System.String)">
+            <summary>
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel"/>.
+            </summary>
+            <param name="text">The text to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Information(System.Exception)">
+            <summary>
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel"/>.
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Information(System.Object)">
+            <summary>
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel"/>.
+            </summary>
+            <param name="obj">The obj to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Warning(System.String)">
+            <summary>
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel"/>.
+            </summary>
+            <param name="text">The text to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Warning(System.Exception)">
+            <summary>
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel"/>.
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Warning(System.Object)">
+            <summary>
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel"/>.
+            </summary>
+            <param name="obj">The obj to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Error(System.String)">
+            <summary>
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel"/>.
+            </summary>
+            <param name="text">The text to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Error(System.Exception)">
+            <summary>
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel"/>.
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Error(System.Object)">
+            <summary>
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel"/>.
+            </summary>
+            <param name="obj">The obj to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Fatal(System.String)">
+            <summary>
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel"/>.
+            </summary>
+            <param name="text">The text to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Fatal(System.Exception)">
+            <summary>
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel"/>.
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.Logger.Fatal(System.Object)">
+            <summary>
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel"/>.
+            </summary>
+            <param name="obj">The obj to log.</param>
+        </member>
+        <member name="T:WithLithum.Core.Logging.LogManager">
+            <summary>
+            Provides utilties to manipulate and manage <see cref="T:WithLithum.Core.Logging.Logger"/>s.
+            </summary>
+            <remarks>
+            Patterns are made of pattern placeholders. Below is a list of all placeholders available:
+            <list type="bullet">
+                <item>{time} - current time in current culture</item>
+                <item>{timeutc} - current time in UTC</item>
+                <item>{newline} - <see cref="P:System.Environment.NewLine"/></item>
+                <item>{message} - the actual message</item>
+                <item>{name} - the name of the logger</item>
+                <item>{level} - the log level</item>
+                <item>{owner} - the owner of the logger</item>
+                <item>{master} - the masterowner of the logger</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:WithLithum.Core.Logging.LogManager.#ctor(System.String,GTA.Script)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Logging.LogManager"/> class.
+            </summary>
+            <param name="fileName">The name of the file to log.</param>
+            <param name="script">The script.</param>
+        </member>
+        <member name="M:WithLithum.Core.Logging.LogManager.#ctor(System.String,GTA.Script,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Logging.LogManager"/> class.
+            </summary>
+            <param name="fileName">The name of the file to log.</param>
+            <param name="script">The script.</param>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="P:WithLithum.Core.Logging.LogManager.Pattern">
+            <summary>
+            Gets or sets the pattern of this instance.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.Logging.LogManager.GetLogger(System.String)">
+            <summary>
+            Creates a new <see cref="T:WithLithum.Core.Logging.Logger"/> owned by the master script.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>An instance of <see cref="T:WithLithum.Core.Logging.Logger"/>.</returns>
+        </member>
+        <member name="M:WithLithum.Core.Logging.LogManager.GetLogger(System.String,GTA.Script)">
+            <summary>
+            Creates a new <see cref="T:WithLithum.Core.Logging.Logger"/> owned by the specified script.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="owner">The owner.</param>
+            <returns>An instance of <see cref="T:WithLithum.Core.Logging.Logger"/>.</returns>
+        </member>
         <member name="T:WithLithum.Core.PedModel.Appearance.FaceFeature">
             <summary>
             Provides utilties to manipulate a specific face feature of freemode model head blends.
@@ -280,6 +523,239 @@
             <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend"/>
             <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>
         </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Benjamin">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Daniel">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Joshua">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Noah">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Andrew">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Juan">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Alex">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Isaac">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Evan">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Ethan">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Vincent">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Angel">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Diego">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Adrian">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Gabriel">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Michael">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Santiago">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Kevin">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Louis">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Samuel">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Anthony">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Hannah">
+            <summary>
+            A mother. She has an ID of 22.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Audrey">
+            <summary>
+            One of the parents. They have an ID of 23.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Jasmine">
+            <summary>
+            One of the parents. They have an ID of 24.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Giselle">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Amelia">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Isabella">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Zoe">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Ava">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Camila">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Violet">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Sophia">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Evelyn">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Nicole">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Ashley">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Grace">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Brianna">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Natalie">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Olivia">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Elizabeth">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Charlotte">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Emma">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Claude">
+            <summary>
+            A father. He's the protagonist of Grand Theft Auto III.
+            He has an ID of 43.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Niko">
+            <summary>
+            A father. He's the protagonist of Grand Theft Auto IV.
+            He has an ID of 44.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.John">
+            <summary>
+            One of the parents.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Misty">
+            <summary>
+            A mother. She's one of the characters in Grand Theft Auto III.
+            She has an ID of 46.
+            </summary>
+        </member>
         <member name="T:WithLithum.Core.PedModel.Appearance.HeadOverlay">
             <summary>
             Provides methods and properties to manipulate head overlay.
@@ -312,6 +788,71 @@
             <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay"/>
             <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>
         </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Blemishes">
+            <summary>
+            The blemishes.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.FacialHair">
+            <summary>
+            The facial hair, also known as beard.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Eyebrows">
+            <summary>
+            The eyebrows.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Ageing">
+            <summary>
+            The ageing effects.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Makeup">
+            <summary>
+            The makeup effect on the whole face.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Blush">
+            <summary>
+            The blush effect.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Complexion">
+            <summary>
+            The complexion.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.SunDamage">
+            <summary>
+            The effect of sun damage.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Lipstick">
+            <summary>
+            The lipstick.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Freckles">
+            <summary>
+            The freckles.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.ChestHair">
+            <summary>
+            The chest hair.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.BodyBlemishes">
+            <summary>
+            The body blemishes.
+            </summary>
+        </member>
+        <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.ExtraBodyBlemishes">
+            <summary>
+            Extra <see cref="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.BodyBlemishes"/>.
+            </summary>
+        </member>
         <member name="T:WithLithum.Core.PedModel.PedExtensions">
             <summary>
             Provide extension methods to <see cref="T:GTA.Ped"/> class.
@@ -324,6 +865,27 @@
             </summary>
             <param name="ped">The ped.</param>
             <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>. Multiple calls with the same ped are not guaranteed to return the same instance.</returns>
+        </member>
+        <member name="T:WithLithum.Core.Util.Quicks">
+            <summary>
+            Provide quick accesses. This class is meant to be imported using <c>using static</c>.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.Util.Quicks.PChara">
+            <summary>
+            Gets the player character.
+            </summary>
+            <value>
+            The player character.
+            </value>
+        </member>
+        <member name="P:WithLithum.Core.Util.Quicks.PVehicle">
+            <summary>
+            Gets the player's current vehicle.
+            </summary>
+            <value>
+            If player's in vehicle, player's current vehicle; otherwise, <c>null</c>.
+            </value>
         </member>
     </members>
 </doc>
