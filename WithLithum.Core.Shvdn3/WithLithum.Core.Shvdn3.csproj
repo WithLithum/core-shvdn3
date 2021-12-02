@@ -9,14 +9,17 @@
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <Copyright>(C) WithLithum - 2021.</Copyright>
     <PackageProjectUrl>https://gitlab.com/WithLithum/core-shvdn3</PackageProjectUrl>
-    <RepositoryType>Git</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://gitlab.com/WithLithum/core-shvdn3</RepositoryUrl>
-    <AssemblyVersion>0.1.1.0</AssemblyVersion>
-    <FileVersion>0.1.1.0</FileVersion>
-    <Version>0.1.1</Version>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
+    <Version>0.2.0</Version>
     <RootNamespace>WithLithum.Core</RootNamespace>
     <AssemblyName>WithLithum.Core.SHVDN3</AssemblyName>
     <CodeAnalysisRuleSet>..\.sonarlint\withlithum_core-shvdn3csharp.ruleset</CodeAnalysisRuleSet>
+    <PackageIcon>LithiumDevCore.png</PackageIcon>
+    <PackageTags>SHVDN Modding GTA5 Ldev-Official</PackageTags>
+    <PackageReleaseNotes>Add quicks and some features (initial package release)</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -25,6 +28,13 @@
 
   <ItemGroup>
     <AdditionalFiles Include="..\.sonarlint\withlithum_core-shvdn3\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Images\LithiumDevCore.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

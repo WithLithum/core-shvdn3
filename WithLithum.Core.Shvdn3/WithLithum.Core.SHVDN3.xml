@@ -4,6 +4,70 @@
         <name>WithLithum.Core.SHVDN3</name>
     </assembly>
     <members>
+        <member name="T:WithLithum.Core.Engine.Session">
+            <summary>
+            Provides utilties to manipulate various session-related stuff in single/multi-player.
+            Not intended for GTA Online.
+            </summary>
+        </member>
+        <member name="P:WithLithum.Core.Engine.Session.PlayerCount">
+            <summary>
+            Gets the numbers of the players in the current session.
+            </summary>
+            <value>
+            If in multiplayer, the number of players in the current session; otherwise, always <c>1</c>.
+            </value>
+        </member>
+        <member name="T:WithLithum.Core.Entities.Extensions.EntityExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:GTA.Entity"/> class.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.Entities.Extensions.EntityExtensions.SetLightsOn(GTA.Entity,System.Boolean)">
+            <summary>
+            Sets a value indicating whether the light of this entity is on.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="on">On or off.</param>
+        </member>
+        <member name="T:WithLithum.Core.Entities.WPlayer">
+            <summary>
+            Represents a player. This class is a wrapper for <see cref="T:GTA.Player"/> with extended features.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.Entities.WPlayer.#ctor(GTA.Player)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Entities.WPlayer"/> class.
+            </summary>
+            <param name="basePlayer">The base player.</param>
+        </member>
+        <member name="P:WithLithum.Core.Entities.WPlayer.GtaPlayer">
+            <summary>
+            Gets the original SHVDN player class.
+            </summary>
+            <value>
+            The player, as the original SHVDN player class.
+            </value>
+        </member>
+        <member name="P:WithLithum.Core.Entities.WPlayer.CanControlCharacter">
+            <summary>
+            Gets or sets a value indicating whether this player can control the character.
+            </summary>
+            <value>
+            <see langword="true"/> if this player can control it's character; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:WithLithum.Core.Entities.WPlayer.Character">
+            <summary>
+            Gets the character of this player.
+            </summary>
+            <value>
+            A <see cref="T:GTA.Ped"/> representing the character of this player.
+            </value>
+        </member>
+        <member name="P:WithLithum.Core.Entities.WPlayer.NativeValue">
+            <inheritdoc cref="P:GTA.Native.INativeValue.NativeValue"/>
+        </member>
         <member name="T:WithLithum.Core.Exceptions.InvalidPoolObjectException">
             <summary>
             Thrown when a method, constructor, operation or property that requires a valid <see cref="T:GTA.PoolObject"/> receives invalid <see cref="T:GTA.PoolObject"/>,
@@ -865,6 +929,26 @@
             </summary>
             <param name="ped">The ped.</param>
             <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>. Multiple calls with the same ped are not guaranteed to return the same instance.</returns>
+        </member>
+        <member name="T:WithLithum.Core.Util.NativeFunctions">
+            <summary>
+            Provides quick access for most natives being used in this library as well as other intresting natives.
+            </summary>
+        </member>
+        <member name="M:WithLithum.Core.Util.NativeFunctions.GetNumberOfPlayers">
+            <summary>
+            Gets the number of players in the current session.<br />
+            <i>This is the wrapper for native function 0x407C7F91DDB46C16.</i>
+            </summary>
+            <returns>If in multiplayer, the number of players in the current session; otherwise, always <c>1</c>.</returns>
+        </member>
+        <member name="M:WithLithum.Core.Util.NativeFunctions.SetEntityLights(System.Int32,System.Boolean)">
+            <summary>
+            this enables or disables lights on things such as objects.<br />
+            <i>This is the wrapper for native function 0x7CFBA6A80BDF3874.</i>
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="toggle">when toggle is set to true it turns off the lights, when false it turns them on.</param>
         </member>
         <member name="T:WithLithum.Core.Util.Quicks">
             <summary>
