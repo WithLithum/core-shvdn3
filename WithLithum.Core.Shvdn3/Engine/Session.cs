@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using static WithLithum.Core.Util.NativeFunctions;
-using static WithLithum.Core.Util.Native.API;
+using static WithLithum.Core.Util.Native.Api;
 
 namespace WithLithum.Core.Engine
 {

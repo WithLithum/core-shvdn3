@@ -10,7 +10,7 @@ namespace WithLithum.Core.Util.Native
     /// <summary>
     /// Provides wrappers for native functions.
     /// </summary>
-    public static partial class API
+    public static partial class Api
     {
         /// <summary>
         /// Determines whether the current session is a solo session.

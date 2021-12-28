@@ -21,8 +21,8 @@ namespace WithLithum.Core.UI.Hud
         /// </value>
         public static bool IsOpen
         {
-            get => API.IsPauseMenuActive();
-            set => API.SetPauseMenuActive(value);
+            get => Api.IsPauseMenuActive();
+            set => Api.SetPauseMenuActive(value);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace WithLithum.Core.UI.Hud
         {
             get
             {
-                var v3 = API.GetPauseMenuCursorPosition();
+                var v3 = Api.GetPauseMenuCursorPosition();
                 return new PointF(v3.X, v3.Y);
             }
         }

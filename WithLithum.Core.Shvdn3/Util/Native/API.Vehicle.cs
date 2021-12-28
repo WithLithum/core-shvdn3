@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WithLithum.Core.Util.Native
 {
-    public static partial class API
+    public static partial class Api
     {
         /// <summary>
         /// <i>No description provided.</i>

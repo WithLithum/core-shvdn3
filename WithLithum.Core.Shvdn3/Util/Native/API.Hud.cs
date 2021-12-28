@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WithLithum.Core.Util.Native
 {
-    public static partial class API
+    public static partial class Api
     {
         /// <summary>
         /// <br /><i>This is the wrapper for native function 0xB0034A223497FFCB.</i>

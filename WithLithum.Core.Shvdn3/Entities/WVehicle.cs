@@ -52,7 +52,7 @@ namespace WithLithum.Core.Entities
             get
             {
                 CheckValidCall();
-                return API.IsVehicleEngineOnFire(Internal.Handle);
+                return Api.IsVehicleEngineOnFire(Internal.Handle);
             }
         }
 
@@ -82,12 +82,12 @@ namespace WithLithum.Core.Entities
             get
             {
                 CheckValidCall();
-                return API.GetVehicleEngineHealth(Internal.Handle);
+                return Api.GetVehicleEngineHealth(Internal.Handle);
             }
             set
             {
                 CheckValidCall();
-                API.SetVehicleEngineHealth(Internal.Handle, value);
+                Api.SetVehicleEngineHealth(Internal.Handle, value);
             }
         }
 
