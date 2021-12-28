@@ -16,10 +16,10 @@ namespace WithLithum.Core.Logging
     /// </remarks>
     public class Logger
     {
-        private Script _owner;
-        private Script _master;
-        private string _targetFile;
-        private LogManager _manager;
+        private readonly Script _owner;
+        private readonly Script _master;
+        private readonly string _targetFile;
+        private readonly LogManager _manager;
 
         /// <summary>
         /// The text for trace level.
