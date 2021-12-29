@@ -8,7 +8,7 @@ namespace WithLithum.Core.Entities
     /// <summary>
     /// Wrappers of <see cref="Vehicle"/> with additional utilties.
     /// </summary>
-    public class WVehicle : IDeletable
+    public class WVehicle : WEntity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WVehicle"/> class.
@@ -90,12 +90,6 @@ namespace WithLithum.Core.Entities
         private void CheckValidCall()
         {
             if (!Internal.Exists()) throw new InvalidPoolObjectException(Internal);
-        }
-
-        /// <inheritdoc />
-        public void Delete()
-        {
-            Internal.Delete();
         }
     }
 }

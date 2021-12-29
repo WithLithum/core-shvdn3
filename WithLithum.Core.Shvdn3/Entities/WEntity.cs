@@ -1,4 +1,6 @@
-﻿using WithLithum.Core.Exceptions;
+﻿using GTA;
+using System.ComponentModel;
+using WithLithum.Core.Exceptions;
 using static WithLithum.Core.Util.Native.Api;
 
 namespace WithLithum.Core.Entities
@@ -6,10 +8,28 @@ namespace WithLithum.Core.Entities
     /// <summary>
     /// Represents an entity in the game world.
     /// </summary>
-    public abstract class WEntity : IHandleable
+    public abstract class WEntity : IHandleable, IDeletable
     {
         /// <inheritdoc />
         public uint Handle { get; protected set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is visible (rendered by client).
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if this instance is visible; otherwise, <see langword="false"/>.
+        /// </value>
+        public bool Visible
+        {
+            get
+            {
+                return IsEntityVisible(RequiresValid().Handle);
+            }
+            set
+            {
+                SetEntityVisible(RequiresValid().Handle, value);
+            }
+        }
 
         /// <summary>
         /// Gets a value indicating whether this instance is on fire.
@@ -40,6 +60,23 @@ namespace WithLithum.Core.Entities
         {
             if (!IsValid()) throw new InvalidPoolObjectException(this);
             return this;
+        }
+
+        /// <summary>
+        /// Sets a value indicating whether the light of this entity is on.
+        /// </summary>
+        /// <param name="on">On or off.</param>
+        public void SetLightsOn(bool on)
+        {
+            SetEntityLights(RequiresValid().Handle, !on);
+        }
+
+        /// <inheritdoc />
+        public void Delete()
+        {
+            var handle = RequiresValid().Handle;
+            DeleteEntity(ref handle);
+            Handle = handle;
         }
     }
 }

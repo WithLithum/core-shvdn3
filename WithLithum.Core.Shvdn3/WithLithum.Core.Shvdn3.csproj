@@ -20,6 +20,7 @@
     <PackageIcon>LithiumDevCore.png</PackageIcon>
     <PackageTags>SHVDN Modding GTA5 Ldev-Official</PackageTags>
     <PackageReleaseNotes>Add quicks and some features (initial package release)</PackageReleaseNotes>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
