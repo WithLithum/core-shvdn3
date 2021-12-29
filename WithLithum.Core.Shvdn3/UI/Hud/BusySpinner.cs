@@ -1,4 +1,5 @@
 ﻿using WithLithum.Core.Util;
+using WithLithum.Core.Util.Native;
 
 namespace WithLithum.Core.UI.Hud
 {
@@ -13,7 +14,7 @@ namespace WithLithum.Core.UI.Hud
         /// <value>
         /// <see langword="true"/> if busy spinner is currently active; otherwise, <see langword="false"/>.
         /// </value>
-        public static bool IsBusySpinnerActive => NativeFunctions.BusyspinnerIsOn();
+        public static bool IsBusySpinnerActive => Api.BusyspinnerIsOn();
 
         /// <summary>
         /// Displays the busy spinner.
@@ -22,9 +23,9 @@ namespace WithLithum.Core.UI.Hud
         /// <param name="type">The type of the spinner.</param>
         public static void DisplayBusySpinner(Text text, BusySpinnerType type = BusySpinnerType.Right)
         {
-            NativeFunctions.BeginTextCommandBusyspinnerOn("STRING");
+            Api.BeginTextCommandBusyspinnerOn("STRING");
             text.Add();
-            NativeFunctions.EndTextCommandBusyspinnerOn((int)type);
+            Api.EndTextCommandBusyspinnerOn((int)type);
         }
     }
 }

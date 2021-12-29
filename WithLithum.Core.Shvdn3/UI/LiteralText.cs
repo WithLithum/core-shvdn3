@@ -1,4 +1,5 @@
 ﻿using WithLithum.Core.Util;
+using WithLithum.Core.Util.Native;
 
 namespace WithLithum.Core.UI
 {
@@ -24,7 +25,7 @@ namespace WithLithum.Core.UI
         /// <inheritdoc />
         public override void Add()
         {
-            NativeFunctions.AddTextComponentSubstringPlayerName(Value);
+            Api.AddTextComponentSubstringPlayerName(Value);
         }
     }
 }

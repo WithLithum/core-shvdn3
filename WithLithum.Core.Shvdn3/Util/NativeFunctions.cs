@@ -1,10 +1,12 @@
 ﻿using GTA.Native;
+using System;
 
 namespace WithLithum.Core.Util
 {
     /// <summary>
     /// Provides quick access for most natives being used in this library as well as other intresting natives.
     /// </summary>
+    [Obsolete("Move to Native Api instead. If there are still natives using this, migrate to API.")]
     public static class NativeFunctions
     {
         /// <summary>
@@ -13,14 +15,6 @@ namespace WithLithum.Core.Util
         /// </summary>
         /// <returns>If in multiplayer, the number of players in the current session; otherwise, always <c>1</c>.</returns>
         public static int GetNumberOfPlayers() => Function.Call<int>(Hash.GET_NUMBER_OF_PLAYERS);
-
-        /// <summary>
-        /// this enables or disables lights on things such as objects.<br />
-        /// <i>This is the wrapper for native function 0x7CFBA6A80BDF3874.</i>
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="toggle">when toggle is set to true it turns off the lights, when false it turns them on.</param>
-        public static void SetEntityLights(int entity, bool toggle) => Function.Call(Hash.SET_ENTITY_LIGHTS, entity, toggle);
 
         /// <summary>
         /// <i>This is the wrapper for native function 0x7B1776B3B53F8D74.</i>
@@ -38,38 +32,5 @@ namespace WithLithum.Core.Util
         {
             Function.Call(Hash.SET_WARNING_MESSAGE, entryLine1, instructionalKey, entryLine2, p3, p4, background, p6, showBg, errorCode);
         }
-
-        /// <summary>
-        /// Adds an arbitrary string as a text component placeholder, replacing ~a~ in the current text command's text label.
-        /// <br /><i>This is the wrapper for native function 0x6C188BE134E074AA.</i>
-        /// </summary>
-        /// <param name="text">The text to add.</param>
-        public static void AddTextComponentSubstringPlayerName(string text) => Function.Call(Hash.ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME, text);
-
-        /// <summary>
-        /// Adds a text label as a text component placeholder, replacing ~a~ in the current text command's text label.
-        /// <br /><i>This is the wrapper for native function 0xC63CD5D2920ACBE7.</i>
-        /// </summary>
-        /// <param name="text">The text to add.</param>
-        public static void AddTextComponentSubstringTextLabel(string text) => Function.Call(Hash.ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME, text);
-
-        /// <summary>
-        /// Initializes the text entry for the text next to a loading prompt.
-        /// All natives for building UI texts can be used here .
-        /// <br /><i>This is the wrapper for native function 0xABA17D7CE615ADBF.</i>
-        /// </summary>
-        /// <param name="str">The text to add.</param>
-        public static void BeginTextCommandBusyspinnerOn(string str) => Function.Call(Hash.BEGIN_TEXT_COMMAND_BUSYSPINNER_ON, str);
-
-        /// <summary>
-        /// <i>This is the wrapper for native function 0xBD12F8228410D9B4.</i>
-        /// </summary>
-        /// <param name="busySpinnerType">The type of the spinner.</param>
-        public static void EndTextCommandBusyspinnerOn(int busySpinnerType) => Function.Call(Hash.END_TEXT_COMMAND_BUSYSPINNER_ON, busySpinnerType);
-
-        /// <summary>
-        /// <i>This is the wrapper for native function 0xD422FCC5F239A915.</i>
-        /// </summary>
-        public static bool BusyspinnerIsOn() => Function.Call<bool>(Hash.BUSYSPINNER_IS_ON);
     }
 }

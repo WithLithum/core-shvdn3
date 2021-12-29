@@ -23,5 +23,38 @@ namespace WithLithum.Core.Util.Native
         {
             return Function.Call<Vector3>((Hash)0x5BFF36D6ED83E0AE);
         }
+
+        /// <summary>
+        /// Adds an arbitrary string as a text component placeholder, replacing ~a~ in the current text command's text label.
+        /// <br /><i>This is the wrapper for native function 0x6C188BE134E074AA.</i>
+        /// </summary>
+        /// <param name="text">The text to add.</param>
+        public static void AddTextComponentSubstringPlayerName(string text) => Function.Call(Hash.ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME, text);
+
+        /// <summary>
+        /// Adds a text label as a text component placeholder, replacing ~a~ in the current text command's text label.
+        /// <br /><i>This is the wrapper for native function 0xC63CD5D2920ACBE7.</i>
+        /// </summary>
+        /// <param name="text">The text to add.</param>
+        public static void AddTextComponentSubstringTextLabel(string text) => Function.Call(Hash.ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME, text);
+
+        /// <summary>
+        /// Initializes the text entry for the text next to a loading prompt.
+        /// All natives for building UI texts can be used here .
+        /// <br /><i>This is the wrapper for native function 0xABA17D7CE615ADBF.</i>
+        /// </summary>
+        /// <param name="str">The text to add.</param>
+        public static void BeginTextCommandBusyspinnerOn(string str) => Function.Call(Hash.BEGIN_TEXT_COMMAND_BUSYSPINNER_ON, str);
+
+        /// <summary>
+        /// <i>This is the wrapper for native function 0xBD12F8228410D9B4.</i>
+        /// </summary>
+        /// <param name="busySpinnerType">The type of the spinner.</param>
+        public static void EndTextCommandBusyspinnerOn(int busySpinnerType) => Function.Call(Hash.END_TEXT_COMMAND_BUSYSPINNER_ON, busySpinnerType);
+
+        /// <summary>
+        /// <i>This is the wrapper for native function 0xD422FCC5F239A915.</i>
+        /// </summary>
+        public static bool BusyspinnerIsOn() => Function.Call<bool>(Hash.BUSYSPINNER_IS_ON);
     }
 }
