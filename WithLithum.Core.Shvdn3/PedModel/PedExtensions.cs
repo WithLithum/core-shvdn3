@@ -1,5 +1,4 @@
-﻿using System;
-using GTA;
+﻿using GTA;
 using WithLithum.Core.PedModel.Appearance;
 
 namespace WithLithum.Core.PedModel

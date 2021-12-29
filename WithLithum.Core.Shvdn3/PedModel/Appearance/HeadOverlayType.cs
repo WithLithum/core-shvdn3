@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WithLithum.Core.PedModel.Appearance
+﻿namespace WithLithum.Core.PedModel.Appearance
 {
     /// <summary>
     /// An enumeration of all possible head overlay types.

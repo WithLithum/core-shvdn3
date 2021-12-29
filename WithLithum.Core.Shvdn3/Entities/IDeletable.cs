@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WithLithum.Core.Entities
+﻿namespace WithLithum.Core.Entities
 {
     /// <summary>
     /// Represents an object that can be deleted.
