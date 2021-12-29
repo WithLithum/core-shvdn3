@@ -1,5 +1,6 @@
 ﻿using System;
 using GTA;
+using WithLithum.Core.Entities;
 
 namespace WithLithum.Core.Exceptions
 {
@@ -32,6 +33,13 @@ namespace WithLithum.Core.Exceptions
         /// <param name="poolObject">The object.</param>
         public InvalidPoolObjectException(PoolObject poolObject) : base($"The specified {poolObject.GetType().Name} was invalid.") { }
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/> with the specified object.
+        /// </summary>
+        /// <param name="poolObject">The object.</param>
+        public InvalidPoolObjectException(IHandleable poolObject) : base($"The specified {poolObject.GetType().Name} was invalid.") { }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/>.
         /// </summary>
