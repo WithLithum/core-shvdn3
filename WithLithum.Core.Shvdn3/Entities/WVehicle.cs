@@ -69,5 +69,32 @@ namespace WithLithum.Core.Entities
                 Api.SetVehicleEngineHealth(RequiresValid().Handle, value);
             }
         }
+
+        /// <summary>
+        /// Sets the playback speed of this instance.
+        /// </summary>
+        /// <param name="value">The playback speed of this instance.</param>
+        /// <example>
+        /// An example of playback speed, in mission Chop:
+        /// <code language="cs">
+        /// trailer.SetPlaybackSpeed(trailerPlayback);
+        /// </code>
+        /// </example>
+        public void SetPlaybackSpeed(float value)
+        {
+            Api.SetPlaybackSpeed(RequiresValid().Handle, value);
+        }
+
+        /// <summary>
+        /// Stops this vehicle, if on playback.
+        /// </summary>
+        /// An example of playback speed, in mission Chop:
+        /// <code language="cs">
+        /// trailer.StopPlaybackRecorded()
+        /// </code>
+        public void StopPlaybackRecorded()
+        {
+            Api.StopPlaybackRecordedVehicle(RequiresValid().Handle);
+        }
     }
 }

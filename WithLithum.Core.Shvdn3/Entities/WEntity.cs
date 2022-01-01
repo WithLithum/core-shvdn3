@@ -1,4 +1,5 @@
 ﻿using GTA;
+using System;
 using System.ComponentModel;
 using WithLithum.Core.Exceptions;
 using static WithLithum.Core.Util.Native.Api;
@@ -60,6 +61,29 @@ namespace WithLithum.Core.Entities
         {
             if (!IsValid()) throw new InvalidPoolObjectException(this);
             return this;
+        }
+
+        /// <summary>
+        /// Gets or sets the heading of the instance.
+        /// </summary>
+        /// <value>
+        /// A <see cref="float"/> value, ranged in <c>0</c> to <c>359+</c>, representing the heading of this instance.
+        /// </value>
+        public float Heading
+        {
+            get
+            {
+                return GetEntityHeading(RequiresValid().Handle);
+            }
+            set
+            {
+                if (value >= 360f || value < 0f)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), "Heading must be in degrees (0f-359.99999+f).");
+                }
+
+                SetEntityHeading(RequiresValid().Handle, value);
+            }
         }
 
         /// <summary>

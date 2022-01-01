@@ -35,6 +35,20 @@ namespace WithLithum.Core.Util.Native
         public static void SetEntityVisible(uint /* Entity */ entity, bool toggle, bool unk = false) => Function.Call(Hash.SET_ENTITY_VISIBLE, entity, toggle, unk);
 
         /// <summary>
+        /// Set the heading of an entity in degrees also known as "Yaw".
+        /// </summary>
+        /// <param name="entity">The entity to set the heading for.</param>
+        /// <param name="heading">The heading in degrees.</param>
+        public static void SetEntityHeading(uint /* Entity */ entity, float heading) => Function.Call(Hash.SET_ENTITY_HEADING, entity, heading);
+
+        /// <summary>
+        /// Gets the heading of the specified entity.
+        /// </summary>
+        /// <param name="entity">The entity to get the heading from.</param>
+        /// <returns>The current entity heading.</returns>
+        public static float GetEntityHeading(uint entity) => Function.Call<float>(Hash.GET_ENTITY_HEADING, entity, 0, 0, 0);
+
+        /// <summary>
         /// Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
         /// </summary>
         /// <param name="entity">The entity to delete.</param>
