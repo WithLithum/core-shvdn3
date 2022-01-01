@@ -1,4 +1,5 @@
 ﻿using GTA;
+using GTA.Math;
 using System;
 using WithLithum.Core.Exceptions;
 using WithLithum.Core.Util.Native;
@@ -13,28 +14,13 @@ namespace WithLithum.Core.Entities
         /// <summary>
         /// Initializes a new instance of the <see cref="WVehicle"/> class.
         /// </summary>
-        /// <param name="gtaVehicle">The vehicle.</param>
-        /// <exception cref="ArgumentNullException">Thrown when <paramref name="gtaVehicle"/> was null.</exception>
-        /// <exception cref="ArgumentException">Thrown when <paramref name="gtaVehicle"/> was invalid.</exception>
-        public WVehicle(Vehicle gtaVehicle)
+        /// <param name="model">The model of the vehicle.</param>
+        /// <param name="position">The position of the vehicle.</param>
+        /// <param name="heading">The heading.</param>
+        public WVehicle(Model model, Vector3 position, float heading = 0)
         {
-            if (gtaVehicle == null)
-            {
-                throw new ArgumentNullException(nameof(gtaVehicle));
-            }
-
-            if (!gtaVehicle.Exists())
-            {
-                throw new ArgumentException("Invalid vehicle!", nameof(gtaVehicle));
-            }
-
-            this.Internal = gtaVehicle;
+            this.Handle = (uint)World.CreateVehicle(model, position, heading).Handle;
         }
-
-        /// <summary>
-        /// Gets the internal GTA instance of this instance.
-        /// </summary>
-        public Vehicle Internal { get; }
 
         /// <summary>
         /// Gets a value indicating whether this vehicle has it's engine on fire.
@@ -47,8 +33,7 @@ namespace WithLithum.Core.Entities
         {
             get
             {
-                CheckValidCall();
-                return Api.IsVehicleEngineOnFire(Internal.Handle);
+                return Api.IsVehicleEngineOnFire(RequiresValid().Handle);
             }
         }
 
@@ -77,19 +62,12 @@ namespace WithLithum.Core.Entities
         {
             get
             {
-                CheckValidCall();
-                return Api.GetVehicleEngineHealth(Internal.Handle);
+                return Api.GetVehicleEngineHealth(RequiresValid().Handle);
             }
             set
             {
-                CheckValidCall();
-                Api.SetVehicleEngineHealth(Internal.Handle, value);
+                Api.SetVehicleEngineHealth(RequiresValid().Handle, value);
             }
-        }
-
-        private void CheckValidCall()
-        {
-            if (!Internal.Exists()) throw new InvalidPoolObjectException(Internal);
         }
     }
 }
