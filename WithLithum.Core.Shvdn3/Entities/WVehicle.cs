@@ -71,6 +71,14 @@ namespace WithLithum.Core.Entities
         }
 
         /// <summary>
+        /// Gets a value indicating whether is playback going on in this vehicle.
+        /// </summary>
+        public bool IsPlaybackGoingOn
+        {
+            get => Api.IsPlaybackGoingOnForVehicle(RequiresValid().Handle);
+        }
+
+        /// <summary>
         /// Sets the playback speed of this instance.
         /// </summary>
         /// <param name="value">The playback speed of this instance.</param>

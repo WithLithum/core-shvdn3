@@ -49,6 +49,13 @@ namespace WithLithum.Core.Util.Native
         public static float GetEntityHeading(uint entity) => Function.Call<float>(Hash.GET_ENTITY_HEADING, entity, 0, 0, 0);
 
         /// <summary>
+        /// <i>No description provided.</i>
+        /// </summary>
+        /// <param name="vehicle"><i>No description provided.</i></param>
+        /// <returns><i>No description provided.</i></returns>
+        public static bool IsPlaybackGoingOnForVehicle(uint /* Vehicle */ vehicle) => Function.Call<bool>(Hash.IS_PLAYBACK_GOING_ON_FOR_VEHICLE, vehicle);
+
+        /// <summary>
         /// Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
         /// </summary>
         /// <param name="entity">The entity to delete.</param>
