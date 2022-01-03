@@ -68,5 +68,12 @@ namespace WithLithum.Core.Util.Native
             }
             entity = cf;
         }
+
+        /// <summary>
+        /// Returns the handle of the interior that the entity is in. Returns 0 if outside. 
+        /// </summary>
+        /// <param name="entity">The entity to check.</param>
+        /// <returns>If inside an interior, the ID of the interior; otherwise, <c>0</c>.</returns>
+        public static int GetInteriorFromEntity(uint /* Entity */ entity) => Function.Call<int>(Hash.GET_INTERIOR_FROM_ENTITY, entity);
     }
 }

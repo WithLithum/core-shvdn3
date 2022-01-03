@@ -21,9 +21,14 @@
     <PackageTags>SHVDN Modding GTA5 Ldev-Official</PackageTags>
     <PackageReleaseNotes>Add quicks and some features (initial package release)</PackageReleaseNotes>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Programs\DevProjs\core-shvdn3\WithLithum.Core.Shvdn3\WithLithum.Core.SHVDN3.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DocumentationFile>C:\Programs\DevProjs\core-shvdn3\WithLithum.Core.Shvdn3\WithLithum.Core.SHVDN3.xml</DocumentationFile>
   </PropertyGroup>
 

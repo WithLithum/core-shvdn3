@@ -87,6 +87,17 @@ namespace WithLithum.Core.Entities
         }
 
         /// <summary>
+        /// Gets the interior that this instance is currently in.
+        /// </summary>
+        /// <value>
+        /// If inside any interior, the ID of such interior; otherwise, <c>0</c>.
+        /// </value>
+        public int CurrentInterior
+        {
+            get => GetInteriorFromEntity(RequiresValid().Handle);
+        }
+
+        /// <summary>
         /// Sets a value indicating whether the light of this entity is on.
         /// </summary>
         /// <param name="on">On or off.</param>
