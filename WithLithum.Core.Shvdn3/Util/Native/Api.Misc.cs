@@ -24,7 +24,7 @@ namespace WithLithum.Core.Util.Native
         /// the mission is over.
         /// </summary>
         /// <returns>Returns 1 if the message isn't currently on screen.</returns>
-        public static bool QueueMissionRepeatSave() => 
+        public static bool QueueMissionRepeatSave() =>
             Function.Call<bool>(Hash.QUEUE_MISSION_REPEAT_SAVE);
 
         /// <summary>
