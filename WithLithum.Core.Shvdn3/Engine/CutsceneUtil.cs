@@ -1,12 +1,10 @@
-﻿using System;
+﻿namespace WithLithum.Core.Engine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WithLithum.Core.Engine
+internal class CutsceneUtil
 {
-    internal class CutsceneUtil
-    {
-    }
 }
