@@ -1,5 +1,6 @@
 ﻿namespace WithLithum.Core.Entities;
 using GTA;
+using GTA.Math;
 using System;
 using System.ComponentModel;
 using WithLithum.Core.Exceptions;
@@ -39,6 +40,39 @@ public abstract class WEntity : IHandleable, IDeletable
         get
         {
             return IsEntityOnFire(RequiresValid().Handle);
+        }
+    }
+
+    /// <summary>
+    /// Gets a value indicating whether this instance is being locked by the game engine.
+    /// </summary>
+    /// <remarks>
+    /// When an entity is being locked, it will not respond to <see cref="ApplyForce(ForceType, Vector3, Vector3, bool, bool)"/>,
+    /// and the <see cref="Velocity"/> setter may not work. Also, combat tasks for peds may get ignored.
+    /// </remarks>
+    /// <value>
+    /// <see langword="true"/> if this instance is being locked; otherwise, <see langword="false"/>.
+    /// </value>
+    public bool IsLockedByGameEngine
+    {
+        get
+        {
+            return IsEntityStatic(RequiresValid().Handle);
+        }
+    }
+
+    /// <summary>
+    /// Gets or sets the velocity of this instance.
+    /// </summary>
+    public Vector3 Velocity
+    {
+        get
+        {
+            return GetEntityVelocity(RequiresValid().Handle);
+        }
+        set
+        {
+            SetEntityVelocity(RequiresValid().Handle, value.X, value.Y, value.Z);
         }
     }
 
@@ -111,5 +145,18 @@ public abstract class WEntity : IHandleable, IDeletable
         var handle = RequiresValid().Handle;
         DeleteEntity(ref handle);
         Handle = handle;
+    }
+
+    /// <summary>
+    /// Applies force to this instance.
+    /// </summary>
+    /// <param name="type">The type of the force to apply.</param>
+    /// <param name="pos">The position of the force.</param>
+    /// <param name="offset">The offset of the force.</param>
+    /// <param name="isDirectionalRel">Vector defined in local (body-fixed) coordinate frame</param>
+    /// <param name="isForceRel">When true, force gets multiplied with the objects mass and different objects will have the</param>
+    public void ApplyForce(ForceType type, Vector3 pos, Vector3 offset, bool isDirectionalRel, bool isForceRel)
+    {
+        ApplyForceToEntity(RequiresValid().Handle, (int)type, pos.X, pos.Y, pos.Z, offset.X, offset.Y, offset.Z, 0, isDirectionalRel, false, isForceRel, false, true);
     }
 }

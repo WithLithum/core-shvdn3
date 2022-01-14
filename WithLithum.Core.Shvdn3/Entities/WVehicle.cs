@@ -6,7 +6,7 @@ using WithLithum.Core.Exceptions;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
-/// Wrappers of <see cref="Vehicle"/> with additional utilties.
+/// Represents a vehicle.
 /// </summary>
 public class WVehicle : WEntity
 {
@@ -93,12 +93,24 @@ public class WVehicle : WEntity
     }
 
     /// <summary>
+    /// Sets whether this instance is not prone to crash damages.
+    /// Please note that this does not make the vehicle collision proof.
+    /// </summary>
+    /// <param name="value">If set to <see langword="true"/>, this vehicle does not take damages from crashing.</param>
+    public void SetNotProneToCrashDamage(bool value)
+    {
+        Api.SetVehicleStrong(RequiresValid().Handle, value);
+    }
+
+    /// <summary>
     /// Stops this vehicle, if on playback.
     /// </summary>
+    /// <example>
     /// An example of playback speed, in mission Chop:
     /// <code language="cs">
     /// trailer.StopPlaybackRecorded()
     /// </code>
+    /// </example>
     public void StopPlaybackRecorded()
     {
         Api.StopPlaybackRecordedVehicle(RequiresValid().Handle);

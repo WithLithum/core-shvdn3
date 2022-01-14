@@ -36,4 +36,12 @@ public static partial class Api
     /// <param name="vehicle">The vehicle to check.</param>
     /// <returns>Returns true when the engine of your vehicle is on fire. Returns false if it's not on fire.</returns>
     public static bool IsVehicleEngineOnFire(uint vehicle) => Function.Call<bool>(Hash._IS_VEHICLE_ENGINE_ON_FIRE, vehicle);
+
+    /// <summary>
+    /// If set to true, vehicle will not take crash damage, but is still susceptible to damage from bullets and explosives
+    /// </summary>
+    /// <param name="vehicle"><i>No description provided.</i></param>
+    /// <param name="toggle"><i>No description provided.</i></param>
+    public static void SetVehicleStrong(uint vehicle, bool toggle)
+        => Function.Call(Hash.SET_VEHICLE_STRONG, vehicle, toggle);
 }

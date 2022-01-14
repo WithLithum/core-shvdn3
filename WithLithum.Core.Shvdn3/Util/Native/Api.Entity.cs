@@ -1,4 +1,9 @@
-﻿namespace WithLithum.Core.Util.Native;
+﻿// Copyright (C) WithLithum & contributors 2021.
+
+namespace WithLithum.Core.Util.Native;
+
+using GTA;
+using GTA.Math;
 using GTA.Native;
 
 public static partial class Api
@@ -74,4 +79,38 @@ public static partial class Api
     /// <param name="entity">The entity to check.</param>
     /// <returns>If inside an interior, the ID of the interior; otherwise, <c>0</c>.</returns>
     public static int GetInteriorFromEntity(uint /* Entity */ entity) => Function.Call<int>(Hash.GET_INTERIOR_FROM_ENTITY, entity);
+
+#pragma warning disable S107 // Methods should not have too many parameters
+    public static void ApplyForceToEntity(uint /* Entity */ entity, int forceType, float x, float y, float z, float offX, float offY, float offZ, int boneIndex, bool isDirectionRel, bool ignoreUpVec, bool isForceRel, bool p12, bool p13)
+#pragma warning restore S107 // Methods should not have too many parameters
+    {
+        Function.Call(Hash.APPLY_FORCE_TO_ENTITY, entity, forceType, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13);
+    }
+
+    /// <summary>
+    /// A static ped will not react to natives like "APPLY_FORCE_TO_ENTITY" or "SET_ENTITY_VELOCITY" and oftentimes will not react to task-natives like "AI::TASK_COMBAT_PED".
+    /// The only way I know of to make one of these peds react is to ragdoll them (or sometimes to use CLEAR_PED_TASKS_IMMEDIATELY(). Static peds include almost all far-away peds,
+    /// beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others. If anyone knows how to make a ped non-static without
+    /// ragdolling them, please edit this with the solution.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <returns><i>No description provided.</i></returns>
+    public static bool IsEntityStatic(uint /* Entity */ entity) => Function.Call<bool>(Hash.IS_ENTITY_STATIC, entity);
+
+    /// <summary>
+    /// Gets the velocity of the specified entity.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <returns>An instance of <see cref="Vector3"/> representing the velocity.</returns>
+    public static Vector3 GetEntityVelocity(uint /* Entity */ entity) => Function.Call<Vector3>(Hash.GET_ENTITY_VELOCITY, entity);
+
+    /// <summary>
+    /// Note that the third parameter(denoted as z) is "up and down" with positive numbers encouraging upwards movement.
+    /// </summary>
+    /// <param name="entity"><i>No description provided.</i></param>
+    /// <param name="x"><i>No description provided.</i></param>
+    /// <param name="y"><i>No description provided.</i></param>
+    /// <param name="z"><i>No description provided.</i></param>
+    public static void SetEntityVelocity(uint /* Entity */ entity, float x, float y, float z)
+        => Function.Call(Hash.SET_ENTITY_VELOCITY, entity, x, y, z);
 }
