@@ -113,4 +113,12 @@ public static partial class Api
     /// <param name="z"><i>No description provided.</i></param>
     public static void SetEntityVelocity(uint /* Entity */ entity, float x, float y, float z)
         => Function.Call(Hash.SET_ENTITY_VELOCITY, entity, x, y, z);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <param name="entity"><i>No description provided.</i></param>
+    /// <returns><i>No description provided.</i></returns>
+    public static bool IsEntityDead(uint /* Entity */ entity)
+        => Function.Call<bool>(Hash.IS_ENTITY_DEAD, entity);
 }

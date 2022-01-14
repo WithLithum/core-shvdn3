@@ -77,6 +77,22 @@ public abstract class WEntity : IHandleable, IDeletable
     }
 
     /// <summary>
+    /// Gets a value indicating whether this instance is dead.
+    /// </summary>
+    public bool IsDead
+    {
+        get
+        {
+            return IsEntityDead(RequiresValid().Handle);
+        }
+    }
+
+    /// <summary>
+    /// Gets a value indicating whether this instance is alive.
+    /// </summary>
+    public bool IsAlive => !IsDead;
+
+    /// <summary>
     /// Determines whether this instance still represents a valid entity in the game world.
     /// </summary>
     /// <returns><inheritdoc /></returns>
