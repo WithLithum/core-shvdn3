@@ -5,7 +5,9 @@ namespace WithLithum.Core.Util.Native;
 using GTA;
 using GTA.Math;
 using GTA.Native;
+using System;
 
+[CLSCompliant(false)]
 public static partial class Api
 {
     /// <summary>
@@ -121,4 +123,83 @@ public static partial class Api
     /// <returns><i>No description provided.</i></returns>
     public static bool IsEntityDead(uint /* Entity */ entity)
         => Function.Call<bool>(Hash.IS_ENTITY_DEAD, entity);
+
+    /// <summary>
+    /// Sets whether the entity was invincible.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <param name="toggle">Whether invincible.</param>
+    public static void SetEntityInvincible(uint /* Entity */ entity, bool toggle)
+    {
+        Function.Call(Hash.SET_ENTITY_INVINCIBLE, entity, toggle);
+    }
+
+    /// <summary>
+    /// Gets the current coordinates (world position) for a specified entity.
+    /// </summary>
+    /// <param name="entity">The entity to get the coordinates from.</param>
+    /// <param name="alive">Unused by the game, potentially used by debug builds of GTA in order to assert whether or not an entity was alive.</param>
+    /// <returns>The current entity coordinates.</returns>
+    public static Vector3 GetEntityCoords(uint entity, bool alive)
+    {
+        return Function.Call<Vector3>(Hash.GET_ENTITY_COORDS, entity, alive);
+    }
+
+    /// <summary>
+    /// Sets the coordinates (world position) for a specified entity, offset by the radius of the entity on the Z axis.
+    /// </summary>
+    /// <param name="entity">The entity to change coordinates for.</param>
+    /// <param name="xPos">The X coordinate.</param>
+    /// <param name="yPos">The Y coordinate.</param>
+    /// <param name="zPos">The Z coordinate, ground level.</param>
+    /// <param name="alive">Unused by the game, potentially used by debug builds of GTA in order to assert whether or not an entity was alive.</param>
+    /// <param name="deadFlag">Whether to disable physics for dead peds, too, and not just living peds.</param>
+    /// <param name="ragdollFlag">A special flag used for ragdolling peds.</param>
+    /// <param name="clearArea">Whether to clear any entities in the target area.</param>
+#pragma warning disable S107 // Methods should not have too many parameters
+    public static void SetEntityCoords(uint /* Entity */ entity, float xPos, float yPos, float zPos, bool alive, bool deadFlag, bool ragdollFlag, bool clearArea)
+#pragma warning restore S107 // Methods should not have too many parameters
+    {
+        Function.Call(Hash.SET_ENTITY_COORDS, entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag, clearArea);
+    }
+
+    /// <summary>
+    /// Gets the health of the specified instance.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <returns>Hit points.</returns>
+    public static int GetEntityHealth(uint entity)
+    {
+        return Function.Call<int>(Hash.GET_ENTITY_HEALTH, entity);
+    }
+
+    /// <summary>
+    /// Sets the health of this instance.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <param name="health">The health.</param>
+    public static void SetEntityHealth(uint /* Entity */ entity, int health)
+    {
+        Function.Call(Hash.SET_ENTITY_HEALTH, entity, health);
+    }
+
+    /// <summary>
+    /// Gets the max health of the specified instance.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <returns>Hit points.</returns>
+    public static int GetEntityMaxHealth(uint entity)
+    {
+        return Function.Call<int>(Hash.GET_ENTITY_MAX_HEALTH, entity);
+    }
+
+    /// <summary>
+    /// Sets the max health of this instance.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <param name="health">The health.</param>
+    public static void SetEntityMaxHealth(uint /* Entity */ entity, int health)
+    {
+        Function.Call(Hash.SET_ENTITY_MAX_HEALTH, entity, health);
+    }
 }

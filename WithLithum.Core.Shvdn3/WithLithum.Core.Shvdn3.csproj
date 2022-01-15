@@ -50,4 +50,10 @@
     <PackageReference Include="ScriptHookVDotNet3" Version="3.3.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ScriptHookVDotNet">
+      <HintPath>..\References\ScriptHookVDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
