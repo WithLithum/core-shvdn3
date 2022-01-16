@@ -2,6 +2,7 @@
 using System;
 using GTA;
 using WithLithum.Core.Entities;
+using WithLithum.Core.Entities.Util;
 
 /// <summary>
 /// Thrown when a method, constructor, operation or property that requires a valid <see cref="PoolObject"/> receives invalid <see cref="PoolObject"/>,

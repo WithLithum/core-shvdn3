@@ -202,4 +202,20 @@ public static partial class Api
     {
         Function.Call(Hash.SET_ENTITY_MAX_HEALTH, entity, health);
     }
+
+    /// <summary>
+    /// Gets a value indicating whether the specified instance is upside down.
+    /// </summary>
+    /// <param name="entity">The instance to check.</param>
+    /// <returns>Whether the specified instance is upside down.</returns>
+    public static bool IsEntityUpsidedown(uint /* Entity */ entity) =>
+        Function.Call<bool>(Hash.IS_ENTITY_UPSIDEDOWN, entity);
+
+    /// <summary>
+    /// Returns the model hash from the entity
+    /// </summary>
+    /// <param name="entity">The entity to get the model for.</param>
+    /// <returns>The model hash from the entity.</returns>
+    public static uint GetEntityModel(uint /* Entity */ entity) =>
+        Function.Call<uint>(Hash.GET_ENTITY_MODEL, entity);
 }

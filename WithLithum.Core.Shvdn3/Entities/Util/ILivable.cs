@@ -1,4 +1,4 @@
-﻿namespace WithLithum.Core.Entities;
+﻿namespace WithLithum.Core.Entities.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;

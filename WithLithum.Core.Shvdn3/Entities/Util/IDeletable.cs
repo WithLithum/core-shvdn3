@@ -1,4 +1,4 @@
-﻿namespace WithLithum.Core.Entities;
+﻿namespace WithLithum.Core.Entities.Util;
 
 /// <summary>
 /// Represents an object that can be deleted.

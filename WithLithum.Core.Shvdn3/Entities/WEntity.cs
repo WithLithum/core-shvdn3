@@ -2,18 +2,42 @@
 using GTA;
 using GTA.Math;
 using System;
-using System.ComponentModel;
 using WithLithum.Core.Entities.Util;
 using WithLithum.Core.Exceptions;
+using WithLithum.Core.Util.Native;
 using static WithLithum.Core.Util.Native.Api;
+using IDeletable = Util.IDeletable;
+using ISpatial = Util.ISpatial;
 
 /// <summary>
 /// Represents an entity in the game world.
 /// </summary>
 public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial, ILivable
 {
+    private Model? _model;
+
     /// <inheritdoc />
     public uint Handle { get; protected set; }
+
+    /// <summary>
+    /// Gets the model of this instance.
+    /// </summary>
+    /// <remarks>
+    /// This property caches model so even if the entity invalidates, as long as this
+    /// property were called as least once, the model can be still accessed.
+    /// </remarks>
+    public Model Model
+    {
+        get
+        {
+            if (_model == null)
+            {
+                _model = new Model((int)GetEntityModel(RequiresValid().Handle));
+            }
+
+            return (Model)_model;
+        }
+    }
 
     /// <summary>
     /// Gets or sets a value indicating whether this instance is visible (rendered by client).
@@ -149,6 +173,14 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     {
         get => GetEntityCoords(RequiresValid().Handle, false);
         set => SetEntityCoords(RequiresValid().Handle, value.X, value.Y, value.Z, false, false, false, false);
+    }
+
+    /// <summary>
+    /// Gets a value indicating whether this instance is upside down.
+    /// </summary>
+    public bool IsUpsideDown
+    {
+        get => IsEntityUpsidedown(RequiresValid().Handle);
     }
 
     /// <summary>
