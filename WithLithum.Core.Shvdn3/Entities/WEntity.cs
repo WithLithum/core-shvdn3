@@ -69,6 +69,54 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     }
 
     /// <summary>
+    /// Gets a value indicating whether this instance is on screen.
+    /// </summary>
+    /// <value>
+    /// <see langword="true"/> if this instance is between the two-dimensional space of the screen;
+    /// otherwise <see langword="false"/>.
+    /// </value>
+    /// <remarks>
+    /// This native returns <see langword="true"/> even if this instance is behind an obstacle. The value of
+    /// this property should not be used to determine if the player even as least got any sight of this instance.
+    /// </remarks>
+    public bool IsOnScreen
+    {
+        get
+        {
+            return IsEntityOnScreen(RequiresValid().Handle);
+        }
+    }
+
+    /// <summary>
+    /// Gets the speed of this instance.
+    /// </summary>
+    /// <value>
+    /// A single-percision floating-point value representing the speed of this
+    /// instance in meters per second.
+    /// </value>
+    public float Speed
+    {
+        get
+        {
+            return GetEntitySpeed(RequiresValid().Handle);
+        }
+    }
+
+    /// <summary>
+    /// Gets a value indicating whether this instance is (partially) submerged by water.
+    /// </summary>
+    /// <value>
+    /// <see langword="true"/> if this instance is in water; otherwise, <see langword="false"/>.
+    /// </value>
+    public bool IsInWater
+    {
+        get
+        {
+            return IsEntityInWater(RequiresValid().Handle);
+        }
+    }
+
+    /// <summary>
     /// Gets a value indicating whether this instance is being locked by the game engine.
     /// </summary>
     /// <remarks>

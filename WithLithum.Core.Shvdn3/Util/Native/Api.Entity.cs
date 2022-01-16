@@ -218,4 +218,29 @@ public static partial class Api
     /// <returns>The model hash from the entity.</returns>
     public static uint GetEntityModel(uint /* Entity */ entity) =>
         Function.Call<uint>(Hash.GET_ENTITY_MODEL, entity);
+
+    /// <summary>
+    /// Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.
+    /// This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.
+    /// </summary>
+    /// <param name="entity"><i>No description provided.</i></param>
+    /// <returns>true if the entity is in between the minimum and maximum values for the 2d screen</returns>
+    public static bool IsEntityOnScreen(uint /* Entity */ entity) =>
+        Function.Call<bool>(Hash.IS_ENTITY_ON_SCREEN, entity);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <param name="entity"><i>No description provided.</i></param>
+    /// <returns>result is in meters per second</returns>
+    public static float GetEntitySpeed(uint /* Entity */ entity) =>
+        Function.Call<float>(Hash.GET_ENTITY_SPEED, entity);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <param name="entity"><i>No description provided.</i></param>
+    /// <returns><i>No description provided.</i></returns>
+    public static bool IsEntityInWater(uint /* Entity */ entity) =>
+        Function.Call<bool>(Hash.IS_ENTITY_IN_WATER, entity);
 }
