@@ -2,9 +2,8 @@
 using GTA;
 using GTA.Math;
 using System;
-using WithLithum.Core.Entities.Util;
-using WithLithum.Core.Exceptions;
-using WithLithum.Core.Util.Native;
+using Util;
+using Exceptions;
 using static WithLithum.Core.Util.Native.Api;
 using IDeletable = Util.IDeletable;
 using ISpatial = Util.ISpatial;
@@ -12,7 +11,8 @@ using ISpatial = Util.ISpatial;
 /// <summary>
 /// Represents an entity in the game world.
 /// </summary>
-public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial, ILivable
+public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial, ILivable,
+    ICollidable
 {
     private Model? _model;
 
@@ -30,10 +30,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     {
         get
         {
-            if (_model == null)
-            {
-                _model = new Model((int)GetEntityModel(RequiresValid().Handle));
-            }
+            _model ??= new Model((int) GetEntityModel(RequiresValid().Handle));
 
             return (Model)_model;
         }
@@ -47,26 +44,14 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// </value>
     public bool Visible
     {
-        get
-        {
-            return IsEntityVisible(RequiresValid().Handle);
-        }
-        set
-        {
-            SetEntityVisible(RequiresValid().Handle, value);
-        }
+        get => IsEntityVisible(RequiresValid().Handle);
+        set => SetEntityVisible(RequiresValid().Handle, value);
     }
 
     /// <summary>
     /// Gets a value indicating whether this instance is on fire.
     /// </summary>
-    public bool IsOnFire
-    {
-        get
-        {
-            return IsEntityOnFire(RequiresValid().Handle);
-        }
-    }
+    public bool IsOnFire => IsEntityOnFire(RequiresValid().Handle);
 
     /// <summary>
     /// Gets a value indicating whether this instance is on screen.
@@ -79,28 +64,16 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// This native returns <see langword="true"/> even if this instance is behind an obstacle. The value of
     /// this property should not be used to determine if the player even as least got any sight of this instance.
     /// </remarks>
-    public bool IsOnScreen
-    {
-        get
-        {
-            return IsEntityOnScreen(RequiresValid().Handle);
-        }
-    }
+    public bool IsOnScreen => IsEntityOnScreen(RequiresValid().Handle);
 
     /// <summary>
     /// Gets the speed of this instance.
     /// </summary>
     /// <value>
-    /// A single-percision floating-point value representing the speed of this
+    /// A single-precision floating-point value representing the speed of this
     /// instance in meters per second.
     /// </value>
-    public float Speed
-    {
-        get
-        {
-            return GetEntitySpeed(RequiresValid().Handle);
-        }
-    }
+    public float Speed => GetEntitySpeed(RequiresValid().Handle);
 
     /// <summary>
     /// Gets a value indicating whether this instance is (partially) submerged by water.
@@ -108,13 +81,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <value>
     /// <see langword="true"/> if this instance is in water; otherwise, <see langword="false"/>.
     /// </value>
-    public bool IsInWater
-    {
-        get
-        {
-            return IsEntityInWater(RequiresValid().Handle);
-        }
-    }
+    public bool IsInWater => IsEntityInWater(RequiresValid().Handle);
 
     /// <summary>
     /// Gets a value indicating whether this instance is being locked by the game engine.
@@ -126,39 +93,21 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <value>
     /// <see langword="true"/> if this instance is being locked; otherwise, <see langword="false"/>.
     /// </value>
-    public bool IsLockedByGameEngine
-    {
-        get
-        {
-            return IsEntityStatic(RequiresValid().Handle);
-        }
-    }
+    public bool IsLockedByGameEngine => IsEntityStatic(RequiresValid().Handle);
 
     /// <summary>
     /// Gets or sets the velocity of this instance.
     /// </summary>
     public Vector3 Velocity
     {
-        get
-        {
-            return GetEntityVelocity(RequiresValid().Handle);
-        }
-        set
-        {
-            SetEntityVelocity(RequiresValid().Handle, value.X, value.Y, value.Z);
-        }
+        get => GetEntityVelocity(RequiresValid().Handle);
+        set => SetEntityVelocity(RequiresValid().Handle, value.X, value.Y, value.Z);
     }
 
     /// <summary>
     /// Gets a value indicating whether this instance is dead.
     /// </summary>
-    public bool IsDead
-    {
-        get
-        {
-            return IsEntityDead(RequiresValid().Handle);
-        }
-    }
+    public bool IsDead => IsEntityDead(RequiresValid().Handle);
 
     /// <summary>
     /// Gets a value indicating whether this instance is alive.
@@ -187,13 +136,10 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// </value>
     public float Heading
     {
-        get
-        {
-            return GetEntityHeading(RequiresValid().Handle);
-        }
+        get => GetEntityHeading(RequiresValid().Handle);
         set
         {
-            if (value >= 360f || value < 0f)
+            if (value is >= 360f or < 0f)
             {
                 throw new ArgumentOutOfRangeException(nameof(value), "Heading must be in degrees (0f-359.99999+f).");
             }
@@ -208,10 +154,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <value>
     /// If inside any interior, the ID of such interior; otherwise, <c>0</c>.
     /// </value>
-    public int CurrentInterior
-    {
-        get => GetInteriorFromEntity(RequiresValid().Handle);
-    }
+    public int CurrentInterior => GetInteriorFromEntity(RequiresValid().Handle);
 
     /// <inheritdoc />
     public IntPtr MemoryAddress => SHVDN.NativeMemory.GetEntityAddress((int)RequiresValid().Handle);
@@ -223,13 +166,14 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
         set => SetEntityCoords(RequiresValid().Handle, value.X, value.Y, value.Z, false, false, false, false);
     }
 
+
+    /// <inheritdoc />
+    public bool IsCollisionEnabled => GetEntityCollisionDisabled(RequiresValid().Handle);
+
     /// <summary>
     /// Gets a value indicating whether this instance is upside down.
     /// </summary>
-    public bool IsUpsideDown
-    {
-        get => IsEntityUpsidedown(RequiresValid().Handle);
-    }
+    public bool IsUpsideDown => IsEntityUpsideDown(RequiresValid().Handle);
 
     /// <summary>
     /// Sets a value indicating whether the light of this entity is on.

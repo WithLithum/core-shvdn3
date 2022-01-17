@@ -154,7 +154,7 @@ public static partial class Api
     /// <param name="zPos">The Z coordinate, ground level.</param>
     /// <param name="alive">Unused by the game, potentially used by debug builds of GTA in order to assert whether or not an entity was alive.</param>
     /// <param name="deadFlag">Whether to disable physics for dead peds, too, and not just living peds.</param>
-    /// <param name="ragdollFlag">A special flag used for ragdolling peds.</param>
+    /// <param name="ragdollFlag">A special flag used for rag-dolling peds.</param>
     /// <param name="clearArea">Whether to clear any entities in the target area.</param>
 #pragma warning disable S107 // Methods should not have too many parameters
     public static void SetEntityCoords(uint /* Entity */ entity, float xPos, float yPos, float zPos, bool alive, bool deadFlag, bool ragdollFlag, bool clearArea)
@@ -208,7 +208,7 @@ public static partial class Api
     /// </summary>
     /// <param name="entity">The instance to check.</param>
     /// <returns>Whether the specified instance is upside down.</returns>
-    public static bool IsEntityUpsidedown(uint /* Entity */ entity) =>
+    public static bool IsEntityUpsideDown(uint /* Entity */ entity) =>
         Function.Call<bool>(Hash.IS_ENTITY_UPSIDEDOWN, entity);
 
     /// <summary>
@@ -243,4 +243,12 @@ public static partial class Api
     /// <returns><i>No description provided.</i></returns>
     public static bool IsEntityInWater(uint /* Entity */ entity) =>
         Function.Call<bool>(Hash.IS_ENTITY_IN_WATER, entity);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <param name="entity"><i>No description provided.</i></param>
+    /// <returns><i>No description provided.</i></returns>
+    public static bool GetEntityCollisionDisabled(uint /* Entity */ entity)
+        => Function.Call<bool>(Hash.GET_ENTITY_COLLISION_DISABLED, entity);
 }
