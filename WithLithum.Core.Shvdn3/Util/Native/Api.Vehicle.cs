@@ -44,4 +44,25 @@ public static partial class Api
     /// <param name="toggle"><i>No description provided.</i></param>
     public static void SetVehicleStrong(uint vehicle, bool toggle)
         => Function.Call(Hash.SET_VEHICLE_STRONG, vehicle, toggle);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <param name="density"><i>No description provided.</i></param>
+    public static void SetRandomVehicleDensityThisFrame(float density)
+        => Function.Call(Hash.SET_RANDOM_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME, density);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <param name="density"><i>No description provided.</i></param>
+    public static void SetParkedVehicleDensityThisFrame(float density)
+        => Function.Call(Hash.SET_PARKED_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME, density);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <param name="range"><i>No description provided.</i></param>
+    public static void SetAmbientVehicleRangeMultiplierThisFrame(float range)
+        => Function.Call(Hash.SET_AMBIENT_VEHICLE_RANGE_MULTIPLIER_THIS_FRAME, range);
 }
