@@ -1,9 +1,13 @@
-﻿namespace WithLithum.Core.Entities;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+namespace WithLithum.Core.Entities;
+
+using Exceptions;
 using GTA;
 using GTA.Math;
 using System;
 using Util;
-using Exceptions;
 using static WithLithum.Core.Util.Native.Api;
 using IDeletable = Util.IDeletable;
 using ISpatial = Util.ISpatial;
@@ -30,7 +34,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     {
         get
         {
-            _model ??= new Model((int) GetEntityModel(RequiresValid().Handle));
+            _model ??= new Model((int)GetEntityModel(RequiresValid().Handle));
 
             return (Model)_model;
         }
@@ -165,7 +169,6 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
         get => GetEntityCoords(RequiresValid().Handle, false);
         set => SetEntityCoords(RequiresValid().Handle, value.X, value.Y, value.Z, false, false, false, false);
     }
-
 
     /// <inheritdoc />
     public bool IsCollisionEnabled => GetEntityCollisionDisabled(RequiresValid().Handle);

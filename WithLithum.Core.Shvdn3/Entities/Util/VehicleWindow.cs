@@ -1,11 +1,7 @@
-﻿namespace WithLithum.Core.Entities.Util;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
 
-using GTA;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace WithLithum.Core.Entities.Util;
 
 public class VehicleWindow
 {

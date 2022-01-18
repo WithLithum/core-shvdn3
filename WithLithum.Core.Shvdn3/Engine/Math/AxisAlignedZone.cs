@@ -1,4 +1,7 @@
-﻿using GTA.Math;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+using GTA.Math;
 using JetBrains.Annotations;
 
 namespace WithLithum.Core.Engine.Math;
@@ -19,12 +22,12 @@ public struct AxisAlignedZone
         CornerX = x;
         CornerY = y;
     }
-    
+
     /// <summary>
     /// Gets or sets the first corner of this instance.
     /// </summary>
     public Vector3 CornerX { get; set; }
-    
+
     /// <summary>
     /// Gets or sets the second corner of this instance.
     /// </summary>

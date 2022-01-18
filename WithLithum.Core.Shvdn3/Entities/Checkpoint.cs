@@ -1,4 +1,8 @@
-﻿namespace WithLithum.Core.Entities;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+namespace WithLithum.Core.Entities;
+
 using GTA.Math;
 using System.Drawing;
 using WithLithum.Core.Entities.Util;
@@ -18,66 +22,82 @@ public class Checkpoint : IDeletable
         /// <see cref="BaleCylinder"/> with an arrow.
         /// </summary>
         CylinderOneArrow,
+
         /// <summary>
         /// <see cref="BaleCylinder"/> with two arrows.
         /// </summary>
         CylinderTwoArrows,
+
         /// <summary>
         /// <see cref="BaleCylinder"/> with three arrows.
         /// </summary>
         CylinderThreeArrows,
+
         /// <summary>
         /// <see cref="BaleCylinder"/> with an arrow of cycle.
         /// </summary>
         CylinderCycleArrow,
+
         /// <summary>
         /// <see cref="BaleCylinder"/> with a win flag.
         /// </summary>
         CylinderWinFlag,
+
         /// <summary>
         /// <see cref="BaleCylinder"/> with a wrench.
         /// </summary>
         CylinderWrench,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with an arrow.
         /// </summary>
         CircleOneArrow = 12,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with two arrows.
         /// </summary>
         CircleTwoArrows,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with three arrows.
         /// </summary>
         CircleThreeArrows,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with an arrow of cycle.
         /// </summary>
         CircleCycleArrow,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with a win flag.
         /// </summary>
         CircleWinFlag,
+
         /// <summary>
         /// An arrow.
         /// </summary>
         BaleOneArrow,
+
         /// <summary>
         /// Two arrows.
         /// </summary>
         BaleTwoArrows,
+
         /// <summary>
         /// Three arrows.
         /// </summary>
         BaleThreeArrows,
+
         /// <summary>
         /// An arrow of circle.
         /// </summary>
         BaleCycleArrow,
+
         /// <summary>
         /// A win flag.
         /// </summary>
         BaleWinFlag,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with an icon of a plane leveled off.
         /// </summary>
@@ -85,18 +105,22 @@ public class Checkpoint : IDeletable
         /// <see cref="BaleCircle"/> with an icon of a plane rolled to left.
         /// </summary>
         PlaneRollLeft,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with an icon of a plane rolled to right.
         /// </summary>
         PlaneRollRight,
+
         /// <summary>
         /// <see cref="BaleCircle"/> with an icon of a plane rolled upside down.
         /// </summary>
         PlaneRollUpsideDown,
+
         /// <summary>
         /// Nothing but a circle.
         /// </summary>
         BaleCircle = 42,
+
         /// <summary>
         /// <see cref="BaleCylinder"/> with a number.
         /// </summary>
@@ -106,6 +130,7 @@ public class Checkpoint : IDeletable
         /// </note>
         /// </remarks>
         CylinderNumber = 44,
+
         /// <summary>
         /// Nothing but cylinder.
         /// </summary>

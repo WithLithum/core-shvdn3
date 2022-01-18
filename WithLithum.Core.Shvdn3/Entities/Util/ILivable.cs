@@ -1,9 +1,7 @@
-﻿namespace WithLithum.Core.Entities.Util;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+namespace WithLithum.Core.Entities.Util;
 
 /// <summary>
 /// Represents a entity that can be living.

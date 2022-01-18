@@ -20,7 +20,7 @@
         </member>
         <member name="T:WithLithum.Core.Entities.Extensions.EntityExtensions">
             <summary>
-            Provides extension methods for the <see cref="T:GTA.Entity"/> class.
+            Provides extension methods for the <see cref="T:GTA.Entity" /> class.
             </summary>
         </member>
         <member name="M:WithLithum.Core.Entities.Extensions.EntityExtensions.SetLightsOn(GTA.Entity,System.Boolean)">
@@ -32,12 +32,12 @@
         </member>
         <member name="T:WithLithum.Core.Entities.WPlayer">
             <summary>
-            Represents a player. This class is a wrapper for <see cref="T:GTA.Player"/> with extended features.
+            Represents a player. This class is a wrapper for <see cref="T:GTA.Player" /> with extended features.
             </summary>
         </member>
         <member name="M:WithLithum.Core.Entities.WPlayer.#ctor(GTA.Player)">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.Entities.WPlayer"/> class.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Entities.WPlayer" /> class.
             </summary>
             <param name="basePlayer">The base player.</param>
         </member>
@@ -54,7 +54,7 @@
             Gets or sets a value indicating whether this player can control the character.
             </summary>
             <value>
-            <see langword="true"/> if this player can control it's character; otherwise, <see langword="false"/>.
+            <see langword="true" /> if this player can control it's character; otherwise, <see langword="false" />.
             </value>
         </member>
         <member name="P:WithLithum.Core.Entities.WPlayer.Character">
@@ -62,49 +62,49 @@
             Gets the character of this player.
             </summary>
             <value>
-            A <see cref="T:GTA.Ped"/> representing the character of this player.
+            A <see cref="T:GTA.Ped" /> representing the character of this player.
             </value>
         </member>
         <member name="P:WithLithum.Core.Entities.WPlayer.NativeValue">
-            <inheritdoc cref="P:GTA.Native.INativeValue.NativeValue"/>
+            <inheritdoc cref="P:GTA.Native.INativeValue.NativeValue" />
         </member>
         <member name="T:WithLithum.Core.Exceptions.InvalidPoolObjectException">
             <summary>
-            Thrown when a method, constructor, operation or property that requires a valid <see cref="T:GTA.PoolObject"/> receives invalid <see cref="T:GTA.PoolObject"/>,
+            Thrown when a method, constructor, operation or property that requires a valid <see cref="T:GTA.PoolObject" /> receives invalid <see cref="T:GTA.PoolObject" />,
             or the object itself containing the property have it's handle invalidated.
             </summary>
             <remarks>
-            <para><see cref="T:GTA.PoolObject"/>s have an unique identifier in the pool (a special <see cref="T:System.Array"/> used by RAGE Engine), consists of an <b>index</b> and a <b>counter</b>.
-            When a handle no longer represents a valid object inside the pool, it will be considered invalid, which <see cref="M:GTA.PoolObject.Exists"/> will return <see langword="false"/>.</para>
-            <para>Note that this exception will not be thrown if the object was <see langword="null"/>; Instead, <see cref="T:System.NullReferenceException"/> or <see cref="T:System.ArgumentNullException"/> will be
+            <para><see cref="T:GTA.PoolObject" />s have an unique identifier in the pool (a special <see cref="T:System.Array" /> used by RAGE Engine), consists of an <b>index</b> and a <b>counter</b>.
+            When a handle no longer represents a valid object inside the pool, it will be considered invalid, which <see cref="M:GTA.PoolObject.Exists" /> will return <see langword="false" />.</para>
+            <para>Note that this exception will not be thrown if the object was <see langword="null" />; Instead, <see cref="T:System.NullReferenceException" /> or <see cref="T:System.ArgumentNullException" /> will be
             thrown.</para>
             </remarks>
         </member>
         <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/> class.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException" /> class.
             </summary>
         </member>
         <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(System.String)">
-            <summary>Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/> with specified message.</summary>
+            <summary>Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException" /> with specified message.</summary>
             <param name="message">The message which describes the exception.</param>
         </member>
         <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(GTA.PoolObject)">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/> with the specified object.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException" /> with the specified object.
             </summary>
             <param name="poolObject">The object.</param>
         </member>
         <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(System.String,System.Exception)">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/>.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException" />.
             </summary>
             <param name="message">The message which describes the exception.</param>
             <param name="inner">The inner exception.</param>
         </member>
         <member name="M:WithLithum.Core.Exceptions.InvalidPoolObjectException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException"/>.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException" />.
             </summary>
             <param name="info">The information.</param>
             <param name="context">The context.</param>
@@ -114,7 +114,7 @@
             Provides logging features to GTA scripts.
             </summary>
             <remarks>
-            Logger instances are created by <see cref="T:WithLithum.Core.Logging.LogManager"/>.
+            Logger instances are created by <see cref="T:WithLithum.Core.Logging.LogManager" />.
             </remarks>
         </member>
         <member name="F:WithLithum.Core.Logging.Logger.TraceLevel">
@@ -149,7 +149,7 @@
         </member>
         <member name="P:WithLithum.Core.Logging.Logger.Name">
             <summary>
-            Gets the name of this <see cref="T:WithLithum.Core.Logging.Logger"/>.
+            Gets the name of this <see cref="T:WithLithum.Core.Logging.Logger" />.
             </summary>
             <value>
             The name of this instance.
@@ -164,122 +164,122 @@
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Trace(System.String)">
             <summary>
-            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel"/>.
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel" />.
             </summary>
             <param name="text">The text to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Trace(System.Exception)">
             <summary>
-            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel"/>.
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel" />.
             </summary>
             <param name="ex">The exception to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Trace(System.Object)">
             <summary>
-            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel"/>.
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.TraceLevel" />.
             </summary>
             <param name="obj">The obj to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Debug(System.String)">
             <summary>
-            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel"/>.
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel" />.
             </summary>
             <param name="text">The text to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Debug(System.Exception)">
             <summary>
-            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel"/>.
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel" />.
             </summary>
             <param name="ex">The exception to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Debug(System.Object)">
             <summary>
-            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel"/>.
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.DebugLevel" />.
             </summary>
             <param name="obj">The obj to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Information(System.String)">
             <summary>
-            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel"/>.
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel" />.
             </summary>
             <param name="text">The text to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Information(System.Exception)">
             <summary>
-            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel"/>.
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel" />.
             </summary>
             <param name="ex">The exception to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Information(System.Object)">
             <summary>
-            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel"/>.
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.InformationLevel" />.
             </summary>
             <param name="obj">The obj to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Warning(System.String)">
             <summary>
-            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel"/>.
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel" />.
             </summary>
             <param name="text">The text to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Warning(System.Exception)">
             <summary>
-            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel"/>.
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel" />.
             </summary>
             <param name="ex">The exception to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Warning(System.Object)">
             <summary>
-            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel"/>.
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.WarningLevel" />.
             </summary>
             <param name="obj">The obj to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Error(System.String)">
             <summary>
-            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel"/>.
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel" />.
             </summary>
             <param name="text">The text to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Error(System.Exception)">
             <summary>
-            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel"/>.
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel" />.
             </summary>
             <param name="ex">The exception to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Error(System.Object)">
             <summary>
-            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel"/>.
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.ErrorLevel" />.
             </summary>
             <param name="obj">The obj to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Fatal(System.String)">
             <summary>
-            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel"/>.
+            Logs the specified text, with level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel" />.
             </summary>
             <param name="text">The text to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Fatal(System.Exception)">
             <summary>
-            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel"/>.
+            Logs the specified exception, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel" />.
             </summary>
             <param name="ex">The exception to log.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.Logger.Fatal(System.Object)">
             <summary>
-            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel"/>.
+            Logs the specified object, with the level specified as <see cref="F:WithLithum.Core.Logging.Logger.FatalLevel" />.
             </summary>
             <param name="obj">The obj to log.</param>
         </member>
         <member name="T:WithLithum.Core.Logging.LogManager">
             <summary>
-            Provides utilties to manipulate and manage <see cref="T:WithLithum.Core.Logging.Logger"/>s.
+            Provides utilties to manipulate and manage <see cref="T:WithLithum.Core.Logging.Logger" />s.
             </summary>
             <remarks>
             Patterns are made of pattern placeholders. Below is a list of all placeholders available:
             <list type="bullet">
                 <item>{time} - current time in current culture</item>
                 <item>{timeutc} - current time in UTC</item>
-                <item>{newline} - <see cref="P:System.Environment.NewLine"/></item>
+                <item>{newline} - <see cref="P:System.Environment.NewLine" /></item>
                 <item>{message} - the actual message</item>
                 <item>{name} - the name of the logger</item>
                 <item>{level} - the log level</item>
@@ -290,14 +290,14 @@
         </member>
         <member name="M:WithLithum.Core.Logging.LogManager.#ctor(System.String,GTA.Script)">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.Logging.LogManager"/> class.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Logging.LogManager" /> class.
             </summary>
             <param name="fileName">The name of the file to log.</param>
             <param name="script">The script.</param>
         </member>
         <member name="M:WithLithum.Core.Logging.LogManager.#ctor(System.String,GTA.Script,System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.Logging.LogManager"/> class.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.Logging.LogManager" /> class.
             </summary>
             <param name="fileName">The name of the file to log.</param>
             <param name="script">The script.</param>
@@ -310,18 +310,18 @@
         </member>
         <member name="M:WithLithum.Core.Logging.LogManager.GetLogger(System.String)">
             <summary>
-            Creates a new <see cref="T:WithLithum.Core.Logging.Logger"/> owned by the master script.
+            Creates a new <see cref="T:WithLithum.Core.Logging.Logger" /> owned by the master script.
             </summary>
             <param name="name">The name.</param>
-            <returns>An instance of <see cref="T:WithLithum.Core.Logging.Logger"/>.</returns>
+            <returns>An instance of <see cref="T:WithLithum.Core.Logging.Logger" />.</returns>
         </member>
         <member name="M:WithLithum.Core.Logging.LogManager.GetLogger(System.String,GTA.Script)">
             <summary>
-            Creates a new <see cref="T:WithLithum.Core.Logging.Logger"/> owned by the specified script.
+            Creates a new <see cref="T:WithLithum.Core.Logging.Logger" /> owned by the specified script.
             </summary>
             <param name="name">The name.</param>
             <param name="owner">The owner.</param>
-            <returns>An instance of <see cref="T:WithLithum.Core.Logging.Logger"/>.</returns>
+            <returns>An instance of <see cref="T:WithLithum.Core.Logging.Logger" />.</returns>
         </member>
         <member name="T:WithLithum.Core.PedModel.Appearance.FaceFeature">
             <summary>
@@ -486,20 +486,20 @@
         </member>
         <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMix">
             <summary>
-            Gets or sets the genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother"/> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather"/> on the head base shape.
+            Gets or sets the genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother" /> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather" /> on the head base shape.
             </summary>
             <value>
-            The genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother"/> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather"/>. Must between 1.0 and -1.0 (otherwise an exception will be thrown).
-            If set to 1.0, the head base shape of the ped will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother"/>; if set to -1.0, it will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather"/> instead.
+            The genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother" /> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather" />. Must between 1.0 and -1.0 (otherwise an exception will be thrown).
+            If set to 1.0, the head base shape of the ped will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother" />; if set to -1.0, it will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather" /> instead.
             </value>
         </member>
         <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlend.SkinMix">
             <summary>
-            Gets or sets the genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother"/> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather"/> on the skin color (tone).
+            Gets or sets the genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother" /> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather" /> on the skin color (tone).
             </summary>
             <value>
-            The genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother"/> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather"/>. Must between 1.0 and -1.0 (otherwise an exception will be thrown).
-            If set to 1.0, the skin color (tone) of the ped will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother"/>; if set to -1.0, it will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather"/> instead.
+            The genetic bias between <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother" /> and <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather" />. Must between 1.0 and -1.0 (otherwise an exception will be thrown).
+            If set to 1.0, the skin color (tone) of the ped will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeMother" />; if set to -1.0, it will follow <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlend.ShapeFather" /> instead.
             </value>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the specified value out of range of <c>1.0f</c> and <c>-1.0f</c>.</exception>
         </member>
@@ -529,12 +529,12 @@
         </member>
         <member name="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer">
             <summary>
-            Provides head blend customization to model <see cref="F:GTA.PedHash.FreemodeMale01"/> and <see cref="F:GTA.PedHash.FreemodeFemale01"/>.
+            Provides head blend customization to model <see cref="F:GTA.PedHash.FreemodeMale01" /> and <see cref="F:GTA.PedHash.FreemodeFemale01" />.
             </summary>
         </member>
         <member name="M:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.#ctor(GTA.Ped)">
             <summary>
-            Initializes a new instance of the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> class.
+            Initializes a new instance of the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" /> class.
             </summary>
             <param name="ped">The ped to customize.</param>
         </member>
@@ -545,36 +545,36 @@
         </member>
         <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.Blend">
             <summary>
-            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend"/> which can be used to manipulate head blend data of this instance.
+            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend" /> which can be used to manipulate head blend data of this instance.
             </summary>
             <remarks>
             Multiple calls will return the same instance.
             </remarks>
             <value>
-            An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend"/> which can be used to manipulate head blend data of this instance.
+            An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend" /> which can be used to manipulate head blend data of this instance.
             </value>
         </member>
         <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.Item(WithLithum.Core.PedModel.Appearance.HeadOverlayType)">
             <summary>
-            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay"/> based on the specified <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType"/>.
+            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay" /> based on the specified <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType" />.
             </summary>
             <param name="type">The type of the head overlay.</param>
             <remarks>
-            Instances of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay"/> are created by object constructor and stored first. Thus, two calls with the same
-            <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType"/> will return the same instance.
+            Instances of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay" /> are created by object constructor and stored first. Thus, two calls with the same
+            <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType" /> will return the same instance.
             </remarks>
-            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature"/> which can be used to change the value of a specified head overlay.</returns>
+            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature" /> which can be used to change the value of a specified head overlay.</returns>
         </member>
         <member name="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.Item(WithLithum.Core.PedModel.Appearance.FaceFeatureType)">
             <summary>
-            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature"/> based on the specified <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeatureType"/>.
+            Gets an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature" /> based on the specified <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeatureType" />.
             </summary>
             <remarks>
-            Instances of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature"/>  are created by object constructor and stored first. Thus, two calls with the same
-            <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeatureType"/> will return the same instance.
+            Instances of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature" />  are created by object constructor and stored first. Thus, two calls with the same
+            <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeatureType" /> will return the same instance.
             </remarks>
             <param name="type">The type of the face feature.</param>
-            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature"/> which can be used to change the value of a specified face feature.</returns>
+            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.FaceFeature" /> which can be used to change the value of a specified face feature.</returns>
         </member>
         <member name="T:WithLithum.Core.PedModel.Appearance.HeadBlendParent">
             <summary>
@@ -584,8 +584,8 @@
             <note type="important">This list may not be accurate, because this list is simply chronologically ordered instead of tested actually.<br />
             For more information, see <see href="https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset_ped_head_blend_data-explained">this topic</see> on GTAForums.</note>
             </remarks>
-            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend"/>
-            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlend" />
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" />
         </member>
         <member name="F:WithLithum.Core.PedModel.Appearance.HeadBlendParent.Benjamin">
             <summary>
@@ -827,30 +827,30 @@
         </member>
         <member name="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Opacity">
             <summary>
-            Gets or sets the opacity used when setting <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index"/> next time. This value will not be effective until next call to <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index"/>'s setter.
+            Gets or sets the opacity used when setting <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index" /> next time. This value will not be effective until next call to <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index" />'s setter.
             </summary>
         </member>
         <member name="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index">
             <summary>
             Gets the index of this instance.
             </summary>
-            <exception cref="T:System.InvalidOperationException">Thrown when the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> or it's <see cref="T:GTA.Ped"/> was null, or when <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.BasePed"/> was invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" /> or it's <see cref="T:GTA.Ped" /> was null, or when <see cref="P:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer.BasePed" /> was invalid.</exception>
         </member>
         <member name="M:WithLithum.Core.PedModel.Appearance.HeadOverlay.SetColor(System.Int32,System.Int32)">
             <summary>
-            Sets the color of this instance. Recommended to call right after setting <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index"/>. The type of the color is automatically determined based on <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType"/>.
+            Sets the color of this instance. Recommended to call right after setting <see cref="P:WithLithum.Core.PedModel.Appearance.HeadOverlay.Index" />. The type of the color is automatically determined based on <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType" />.
             </summary>
             <param name="firstId">The first color Id.</param>
             <param name="secondId">The second color Id.</param>
-            <exception cref="T:System.InvalidOperationException">Thrown when the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType"/> of this instance does not allow colors, or when <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>'s ped was null.</exception>
-            <exception cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException">Thrown when the ped of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> of this instance invalidates.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the <see cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType" /> of this instance does not allow colors, or when <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" />'s ped was null.</exception>
+            <exception cref="T:WithLithum.Core.Exceptions.InvalidPoolObjectException">Thrown when the ped of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" /> of this instance invalidates.</exception>
         </member>
         <member name="T:WithLithum.Core.PedModel.Appearance.HeadOverlayType">
             <summary>
             An enumeration of all possible head overlay types.
             </summary>
-            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay"/>
-            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadOverlay" />
+            <seealso cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" />
         </member>
         <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.Blemishes">
             <summary>
@@ -914,21 +914,21 @@
         </member>
         <member name="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.ExtraBodyBlemishes">
             <summary>
-            Extra <see cref="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.BodyBlemishes"/>.
+            Extra <see cref="F:WithLithum.Core.PedModel.Appearance.HeadOverlayType.BodyBlemishes" />.
             </summary>
         </member>
         <member name="T:WithLithum.Core.PedModel.PedExtensions">
             <summary>
-            Provide extension methods to <see cref="T:GTA.Ped"/> class.
+            Provide extension methods to <see cref="T:GTA.Ped" /> class.
             </summary>
         </member>
         <member name="M:WithLithum.Core.PedModel.PedExtensions.HeadBlend(GTA.Ped)">
             <summary>
-            Receives an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/> which can be used to edit the face features,
+            Receives an instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" /> which can be used to edit the face features,
             head blend datas, etc. of this instance.
             </summary>
             <param name="ped">The ped.</param>
-            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer"/>. Multiple calls with the same ped are not guaranteed to return the same instance.</returns>
+            <returns>An instance of <see cref="T:WithLithum.Core.PedModel.Appearance.HeadBlendCustomizer" />. Multiple calls with the same ped are not guaranteed to return the same instance.</returns>
         </member>
         <member name="T:WithLithum.Core.Util.NativeFunctions">
             <summary>

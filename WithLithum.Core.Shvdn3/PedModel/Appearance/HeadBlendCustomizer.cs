@@ -1,7 +1,11 @@
-﻿namespace WithLithum.Core.PedModel.Appearance;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+namespace WithLithum.Core.PedModel.Appearance;
+
+using GTA;
 using System;
 using System.Collections.Generic;
-using GTA;
 using WithLithum.Core.Exceptions;
 
 /// <summary>

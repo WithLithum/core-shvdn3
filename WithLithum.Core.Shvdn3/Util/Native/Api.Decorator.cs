@@ -1,4 +1,7 @@
-﻿using GTA.Native;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+using GTA.Native;
 
 namespace WithLithum.Core.Util.Native;
 
@@ -19,7 +22,7 @@ public static partial class Api
         => Function.Call(Hash.DECOR_REGISTER_LOCK);
 
     /// <summary>
-    /// Returns whether or not the specified property is set for the entity. 
+    /// Returns whether or not the specified property is set for the entity.
     /// </summary>
     /// <param name="entity"><i>No description provided.</i></param>
     /// <param name="propertyName"><i>No description provided.</i></param>

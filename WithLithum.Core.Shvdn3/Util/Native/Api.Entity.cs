@@ -1,8 +1,8 @@
-﻿// Copyright (C) WithLithum & contributors 2021.
+﻿// Copyright (C) W// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
 
 namespace WithLithum.Core.Util.Native;
 
-using GTA;
 using GTA.Math;
 using GTA.Native;
 using System;
@@ -76,13 +76,14 @@ public static partial class Api
     }
 
     /// <summary>
-    /// Returns the handle of the interior that the entity is in. Returns 0 if outside. 
+    /// Returns the handle of the interior that the entity is in. Returns 0 if outside.
     /// </summary>
     /// <param name="entity">The entity to check.</param>
     /// <returns>If inside an interior, the ID of the interior; otherwise, <c>0</c>.</returns>
     public static int GetInteriorFromEntity(uint /* Entity */ entity) => Function.Call<int>(Hash.GET_INTERIOR_FROM_ENTITY, entity);
 
 #pragma warning disable S107 // Methods should not have too many parameters
+
     public static void ApplyForceToEntity(uint /* Entity */ entity, int forceType, float x, float y, float z, float offX, float offY, float offZ, int boneIndex, bool isDirectionRel, bool ignoreUpVec, bool isForceRel, bool p12, bool p13)
 #pragma warning restore S107 // Methods should not have too many parameters
     {
@@ -157,6 +158,7 @@ public static partial class Api
     /// <param name="ragdollFlag">A special flag used for rag-dolling peds.</param>
     /// <param name="clearArea">Whether to clear any entities in the target area.</param>
 #pragma warning disable S107 // Methods should not have too many parameters
+
     public static void SetEntityCoords(uint /* Entity */ entity, float xPos, float yPos, float zPos, bool alive, bool deadFlag, bool ragdollFlag, bool clearArea)
 #pragma warning restore S107 // Methods should not have too many parameters
     {

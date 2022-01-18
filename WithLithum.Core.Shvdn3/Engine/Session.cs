@@ -1,7 +1,10 @@
-﻿namespace WithLithum.Core.Engine;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
 
-using static WithLithum.Core.Util.NativeFunctions;
+namespace WithLithum.Core.Engine;
+
 using static WithLithum.Core.Util.Native.Api;
+using static WithLithum.Core.Util.NativeFunctions;
 
 /// <summary>
 /// Provides utilties to manipulate various session-related stuff in single/multi-player.

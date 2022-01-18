@@ -1,7 +1,10 @@
-﻿namespace WithLithum.Core.Exceptions;
-using System;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+namespace WithLithum.Core.Exceptions;
+
 using GTA;
-using WithLithum.Core.Entities;
+using System;
 using WithLithum.Core.Entities.Util;
 
 /// <summary>
@@ -20,8 +23,8 @@ public class InvalidPoolObjectException : Exception
     /// <summary>
     /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/> class.
     /// </summary>
-    public InvalidPoolObjectException() { }
-
+    public InvalidPoolObjectException()
+    { }
 
     /// <summary>Initializes a new instance of the <see cref="InvalidPoolObjectException"/> with specified message.</summary>
     /// <param name="message">The message which describes the exception.</param>
@@ -32,7 +35,6 @@ public class InvalidPoolObjectException : Exception
     /// </summary>
     /// <param name="poolObject">The object.</param>
     public InvalidPoolObjectException(PoolObject poolObject) : base($"The specified {poolObject.GetType().Name} was invalid.") { }
-
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/> with the specified object.

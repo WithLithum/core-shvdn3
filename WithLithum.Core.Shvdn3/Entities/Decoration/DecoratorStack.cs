@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+using System;
 using WithLithum.Core.Util.Native;
 
 namespace WithLithum.Core.Entities.Decoration;
@@ -10,7 +13,7 @@ public class DecoratorStack
 {
     private WEntity _owner;
     private static bool _finalized;
-    
+
     /// <summary>
     /// Initializes a new instance of the <see cref="DecoratorStack"/> class.
     /// </summary>
@@ -29,8 +32,9 @@ public class DecoratorStack
     {
         return Api.DecorExistOn(_owner.Handle, name);
     }
-    
+
     #region Static (Global) Methods
+
     /// <summary>
     /// Represents a decorator to the game engine.
     /// </summary>
@@ -43,7 +47,7 @@ public class DecoratorStack
         {
             throw new InvalidOperationException("Decorator registration has been finalized.");
         }
-        
+
         Api.DecorRegister(name, (int)type);
     }
 
@@ -56,5 +60,6 @@ public class DecoratorStack
         _finalized = true;
         Api.DecorRegisterLock();
     }
-    #endregion
+
+    #endregion Static (Global) Methods
 }
