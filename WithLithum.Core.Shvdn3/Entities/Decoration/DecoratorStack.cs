@@ -1,6 +1,7 @@
 ﻿// Copyright (C) WithLithum & contributors 2021-2022.
 // Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
 
+using GTA;
 using System;
 using WithLithum.Core.Util.Native;
 
@@ -11,14 +12,14 @@ namespace WithLithum.Core.Entities.Decoration;
 /// </summary>
 public class DecoratorStack
 {
-    private WEntity _owner;
+    private readonly Entity _owner;
     private static bool _finalized;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DecoratorStack"/> class.
     /// </summary>
     /// <param name="owner">The owner.</param>
-    public DecoratorStack(WEntity owner)
+    public DecoratorStack(Entity owner)
     {
         _owner = owner;
     }

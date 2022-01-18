@@ -5,13 +5,12 @@ namespace WithLithum.Core.Entities;
 
 using GTA.Math;
 using System.Drawing;
-using WithLithum.Core.Entities.Util;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
 /// Represents a checkpoint.
 /// </summary>
-public class Checkpoint : IDeletable
+public class Checkpoint
 {
     /// <summary>
     /// An enumeration of all possible styles of the checkpoint.

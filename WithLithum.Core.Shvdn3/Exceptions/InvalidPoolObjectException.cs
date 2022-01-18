@@ -5,7 +5,6 @@ namespace WithLithum.Core.Exceptions;
 
 using GTA;
 using System;
-using WithLithum.Core.Entities.Util;
 
 /// <summary>
 /// Thrown when a method, constructor, operation or property that requires a valid <see cref="PoolObject"/> receives invalid <see cref="PoolObject"/>,
@@ -35,12 +34,6 @@ public class InvalidPoolObjectException : Exception
     /// </summary>
     /// <param name="poolObject">The object.</param>
     public InvalidPoolObjectException(PoolObject poolObject) : base($"The specified {poolObject.GetType().Name} was invalid.") { }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/> with the specified object.
-    /// </summary>
-    /// <param name="poolObject">The object.</param>
-    public InvalidPoolObjectException(IHandleable poolObject) : base($"The specified {poolObject.GetType().Name} was invalid.") { }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InvalidPoolObjectException"/>.

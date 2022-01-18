@@ -27,6 +27,6 @@ public static partial class Api
     /// <param name="entity"><i>No description provided.</i></param>
     /// <param name="propertyName"><i>No description provided.</i></param>
     /// <returns><i>No description provided.</i></returns>
-    public static bool DecorExistOn(uint /* Entity */ entity, string propertyName)
+    public static bool DecorExistOn(int /* Entity */ entity, string propertyName)
         => Function.Call<bool>(Hash.DECOR_EXIST_ON, entity, propertyName);
 }
