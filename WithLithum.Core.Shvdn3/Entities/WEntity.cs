@@ -4,7 +4,6 @@ using GTA.Math;
 using System;
 using Util;
 using Exceptions;
-using JetBrains.Annotations;
 using static WithLithum.Core.Util.Native.Api;
 using IDeletable = Util.IDeletable;
 using ISpatial = Util.ISpatial;
@@ -12,7 +11,6 @@ using ISpatial = Util.ISpatial;
 /// <summary>
 /// Represents an entity in the game world.
 /// </summary>
-[PublicAPI]
 public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial, ILivable,
     ICollidable
 {
@@ -32,7 +30,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     {
         get
         {
-            _model ??= new Model((int) GET_ENTITY_MODEL(RequiresValid().Handle));
+            _model ??= new Model((int) GetEntityModel(RequiresValid().Handle));
 
             return (Model)_model;
         }
@@ -46,8 +44,8 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// </value>
     public bool Visible
     {
-        get => IS_ENTITY_VISIBLE(RequiresValid().Handle);
-        set => SET_ENTITY_VISIBLE(RequiresValid().Handle, value, false);
+        get => IsEntityVisible(RequiresValid().Handle);
+        set => SetEntityVisible(RequiresValid().Handle, value);
     }
 
     /// <summary>
@@ -66,7 +64,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// This native returns <see langword="true"/> even if this instance is behind an obstacle. The value of
     /// this property should not be used to determine if the player even as least got any sight of this instance.
     /// </remarks>
-    public bool IsOnScreen => IS_ENTITY_ON_SCREEN(RequiresValid().Handle);
+    public bool IsOnScreen => IsEntityOnScreen(RequiresValid().Handle);
 
     /// <summary>
     /// Gets the speed of this instance.
@@ -75,7 +73,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// A single-precision floating-point value representing the speed of this
     /// instance in meters per second.
     /// </value>
-    public float Speed => GET_ENTITY_SPEED(RequiresValid().Handle);
+    public float Speed => GetEntitySpeed(RequiresValid().Handle);
 
     /// <summary>
     /// Gets a value indicating whether this instance is (partially) submerged by water.
@@ -83,7 +81,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <value>
     /// <see langword="true"/> if this instance is in water; otherwise, <see langword="false"/>.
     /// </value>
-    public bool IsInWater => IS_ENTITY_IN_WATER(RequiresValid().Handle);
+    public bool IsInWater => IsEntityInWater(RequiresValid().Handle);
 
     /// <summary>
     /// Gets a value indicating whether this instance is being locked by the game engine.
@@ -95,27 +93,22 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <value>
     /// <see langword="true"/> if this instance is being locked; otherwise, <see langword="false"/>.
     /// </value>
-    public bool IsLockedByGameEngine => IS_ENTITY_STATIC(RequiresValid().Handle);
+    public bool IsLockedByGameEngine => IsEntityStatic(RequiresValid().Handle);
 
     /// <summary>
     /// Gets or sets the velocity of this instance.
     /// </summary>
     public Vector3 Velocity
     {
-        get => GET_ENTITY_VELOCITY(RequiresValid().Handle);
-        set => SET_ENTITY_VELOCITY(RequiresValid().Handle, value.X, value.Y, value.Z);
+        get => GetEntityVelocity(RequiresValid().Handle);
+        set => SetEntityVelocity(RequiresValid().Handle, value.X, value.Y, value.Z);
     }
 
     /// <summary>
     /// Gets a value indicating whether this instance is dead.
     /// </summary>
-    public bool IsDead => IS_ENTITY_DEAD(RequiresValid().Handle, false);
+    public bool IsDead => IsEntityDead(RequiresValid().Handle);
 
-    /// <summary>
-    /// Gets a value indicating whether this instance is in the air.
-    /// </summary>
-    public bool IsInAir => IS_ENTITY_IN_AIR(RequiresValid().Handle);
-    
     /// <summary>
     /// Gets a value indicating whether this instance is alive.
     /// </summary>
@@ -124,15 +117,15 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <inheritdoc />
     public int Health
     {
-        get => GET_ENTITY_HEALTH(RequiresValid().Handle);
-        set => SET_ENTITY_HEALTH(RequiresValid().Handle, value, 0);
+        get => GetEntityHealth(RequiresValid().Handle);
+        set => SetEntityHealth(RequiresValid().Handle, value);
     }
 
     /// <inheritdoc/>
     public int MaxHealth
     {
-        get => GET_ENTITY_MAX_HEALTH(RequiresValid().Handle);
-        set => SET_ENTITY_MAX_HEALTH(RequiresValid().Handle, value);
+        get => GetEntityMaxHealth(RequiresValid().Handle);
+        set => SetEntityMaxHealth(RequiresValid().Handle, value);
     }
 
     /// <summary>
@@ -143,7 +136,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// </value>
     public float Heading
     {
-        get => GET_ENTITY_HEADING(RequiresValid().Handle);
+        get => GetEntityHeading(RequiresValid().Handle);
         set
         {
             if (value is >= 360f or < 0f)
@@ -151,9 +144,17 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
                 throw new ArgumentOutOfRangeException(nameof(value), "Heading must be in degrees (0f-359.99999+f).");
             }
 
-            SET_ENTITY_HEADING(RequiresValid().Handle, value);
+            SetEntityHeading(RequiresValid().Handle, value);
         }
     }
+
+    /// <summary>
+    /// Gets the interior that this instance is currently in.
+    /// </summary>
+    /// <value>
+    /// If inside any interior, the ID of such interior; otherwise, <c>0</c>.
+    /// </value>
+    public int CurrentInterior => GetInteriorFromEntity(RequiresValid().Handle);
 
     /// <inheritdoc />
     public IntPtr MemoryAddress => SHVDN.NativeMemory.GetEntityAddress((int)RequiresValid().Handle);
@@ -161,22 +162,18 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <inheritdoc />
     public Vector3 Position
     {
-        get => GET_ENTITY_COORDS(RequiresValid().Handle, false);
-        set => SET_ENTITY_COORDS(RequiresValid().Handle, value.X, value.Y, value.Z, false, false, false, false);
+        get => GetEntityCoords(RequiresValid().Handle, false);
+        set => SetEntityCoords(RequiresValid().Handle, value.X, value.Y, value.Z, false, false, false, false);
     }
 
 
     /// <inheritdoc />
-    public bool IsCollisionEnabled
-    {
-        get => !GET_ENTITY_COLLISION_DISABLED(RequiresValid().Handle);
-        set => SET_ENTITY_COLLISION(RequiresValid().Handle, value, value);
-    }
+    public bool IsCollisionEnabled => GetEntityCollisionDisabled(RequiresValid().Handle);
 
     /// <summary>
     /// Gets a value indicating whether this instance is upside down.
     /// </summary>
-    public bool IsUpsideDown => IS_ENTITY_UPSIDEDOWN(RequiresValid().Handle);
+    public bool IsUpsideDown => IsEntityUpsideDown(RequiresValid().Handle);
 
     /// <summary>
     /// Sets a value indicating whether the light of this entity is on.
@@ -184,14 +181,14 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <param name="on">On or off.</param>
     public void SetLightsOn(bool on)
     {
-        SET_ENTITY_LIGHTS(RequiresValid().Handle, !on);
+        SetEntityLights(RequiresValid().Handle, !on);
     }
 
     /// <inheritdoc />
     public void Delete()
     {
         var handle = RequiresValid().Handle;
-        DELETE_ENTITY(ref handle);
+        DeleteEntity(ref handle);
         Handle = handle;
     }
 
@@ -205,7 +202,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <param name="isForceRel">When true, force gets multiplied with the objects mass and different objects will have the</param>
     public void ApplyForce(ForceType type, Vector3 pos, Vector3 offset, bool isDirectionalRel, bool isForceRel)
     {
-        APPLY_FORCE_TO_ENTITY(RequiresValid().Handle, (int)type, pos.X, pos.Y, pos.Z, offset.X, offset.Y, offset.Z, 0, isDirectionalRel, false, isForceRel, false, true);
+        ApplyForceToEntity(RequiresValid().Handle, (int)type, pos.X, pos.Y, pos.Z, offset.X, offset.Y, offset.Z, 0, isDirectionalRel, false, isForceRel, false, true);
     }
 
     /// <inheritdoc />
@@ -220,7 +217,7 @@ public abstract class WEntity : IHandleable, IDeletable, IAddressable, ISpatial,
     /// <returns><inheritdoc /></returns>
     public bool IsValid()
     {
-        return DOES_ENTITY_EXIST(Handle);
+        return DoesEntityExist(Handle);
     }
 
     /// <summary>
