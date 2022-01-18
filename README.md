@@ -7,16 +7,12 @@
 
 This project contains shared and common codes & implementations for WithLithum's Script Hook V .NET API v3 projects.
 
-## Features
-
-* [x] API for manipulating the look of Freemode Models
-
-- [ ] API for logging
-
 ## Contributing
 
-All contributions are welcome and appericated. To contribute to this project, you'll have to use GitLab [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/).
+All contributions are welcome and appreciated. To contribute to this project, you'll have to use GitLab [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/).
+
+**Please refrain from contributing on GitHub. Repository on GitHub is just a read-only mirror that syncs a commit in five minutes after push and Pull Requests there will be closed without any further warning. To contribute, please use GitLab.**
 
 ## License
 
-This project is licensed under **GNU General Public License 3.0**. You can apply any later version if you perfer.
+This project is licensed under **GNU General Public License 3.0**. You can apply any later version if you prefer.
