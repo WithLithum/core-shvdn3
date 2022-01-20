@@ -1,0 +1,3 @@
+[submodule "Dependencies/CoreCommon"]
+	path = Dependencies/CoreCommon
+	url = https://gitlab.com/WithLithum/core-common.git
