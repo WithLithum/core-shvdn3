@@ -13,4 +13,18 @@ public static partial class Api
     /// <param name="multiplier"><i>No description provided.</i></param>
     public static void SetPedDensityMultiplierThisFrame(float multiplier)
         => Function.Call(Hash.SET_PED_DENSITY_MULTIPLIER_THIS_FRAME, multiplier);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <returns><i>No description provided.</i></returns>
+    public static bool CanCreateRandomDriver()
+        => Function.Call<bool>(Hash.CAN_CREATE_RANDOM_DRIVER);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <returns><i>No description provided.</i></returns>
+    public static bool CanCreateRandomBikeRider()
+        => Function.Call<bool>(Hash.CAN_CREATE_RANDOM_BIKE_RIDER);
 }

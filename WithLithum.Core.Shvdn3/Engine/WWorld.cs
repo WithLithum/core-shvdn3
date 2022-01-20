@@ -66,4 +66,14 @@ public static class WWorld
     {
         Api.SetPedDensityMultiplierThisFrame(multiplier);
     }
+
+    /// <summary>
+    /// Gets a value indicating whether the game can create random drivers.
+    /// </summary>
+    public static bool CreatesRandomDriver => Api.CanCreateRandomDriver();
+
+    /// <summary>
+    /// Gets a value indicating whether the game can create random bike riders.
+    /// </summary>
+    public static bool CreatesRandomBikeRider => Api.CanCreateRandomBikeRider();
 }
