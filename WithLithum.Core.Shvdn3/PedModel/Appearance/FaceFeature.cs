@@ -5,10 +5,12 @@ namespace WithLithum.Core.PedModel.Appearance;
 
 using GTA;
 using GTA.Native;
+using JetBrains.Annotations;
 
 /// <summary>
 /// Provides utilties to manipulate a specific face feature of freemode model head blends.
 /// </summary>
+[PublicAPI]
 public class FaceFeature
 {
     private readonly HeadBlendCustomizer _customizer;

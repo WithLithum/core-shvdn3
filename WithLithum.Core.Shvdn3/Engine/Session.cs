@@ -4,8 +4,8 @@
 namespace WithLithum.Core.Engine;
 
 using JetBrains.Annotations;
-using static WithLithum.Core.Util.Native.Api;
-using static WithLithum.Core.Util.NativeFunctions;
+using static Util.Native.Api;
+using static Util.NativeFunctions;
 
 /// <summary>
 /// Provides utilities to manipulate various session-related stuff in single/multi-player.

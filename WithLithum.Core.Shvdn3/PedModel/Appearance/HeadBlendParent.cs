@@ -3,6 +3,8 @@
 
 namespace WithLithum.Core.PedModel.Appearance;
 
+using JetBrains.Annotations;
+
 /// <summary>
 /// An enumeration of all possible parents in head blend configuration.
 /// </summary>
@@ -12,6 +14,7 @@ namespace WithLithum.Core.PedModel.Appearance;
 /// </remarks>
 /// <seealso cref="HeadBlend"/>
 /// <seealso cref="HeadBlendCustomizer"/>
+[PublicAPI]
 public enum HeadBlendParent
 {
     /// <summary>

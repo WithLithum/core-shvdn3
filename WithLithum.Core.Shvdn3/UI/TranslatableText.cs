@@ -3,11 +3,13 @@
 
 namespace WithLithum.Core.UI;
 
-using WithLithum.Core.Util.Native;
+using JetBrains.Annotations;
+using Util.Native;
 
 /// <summary>
 /// Represents a GXT text label.
 /// </summary>
+[PublicAPI]
 public class TranslatableText : Text
 {
     /// <summary>

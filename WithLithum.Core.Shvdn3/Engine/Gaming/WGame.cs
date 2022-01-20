@@ -5,7 +5,7 @@ namespace WithLithum.Core.Engine.Gaming;
 
 using JetBrains.Annotations;
 using System;
-using WithLithum.Core.Util.Native;
+using Util.Native;
 
 /// <summary>
 /// Provides methods and properties to manipulate aspects of the game.
@@ -24,9 +24,7 @@ public static class WGame
     public static uint GetHashKey(string source)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
-        if (source.Length == 0) return 0;
-
-        return Api.GetHashKey(source);
+        return source.Length == 0 ? 0 : Api.GetHashKey(source);
     }
 
     /// <summary>

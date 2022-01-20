@@ -4,7 +4,7 @@
 namespace WithLithum.Core.UI;
 
 using JetBrains.Annotations;
-using WithLithum.Core.Util.Native;
+using Util.Native;
 
 /// <summary>
 /// Represents a literal text. Also known as player name substring.

@@ -4,6 +4,7 @@
 namespace WithLithum.Core.Logging;
 
 using GTA;
+using JetBrains.Annotations;
 using System;
 using System.IO;
 
@@ -23,6 +24,7 @@ using System.IO;
 ///     <item>{master} - the masterowner of the logger</item>
 /// </list>
 /// </remarks>
+[PublicAPI]
 public class LogManager
 {
     private readonly Script _ownerScript;
@@ -42,7 +44,7 @@ public class LogManager
         }
 
         _fileName = fileName;
-        _ownerScript = script ?? throw new ArgumentNullException(nameof(fileName));
+        _ownerScript = script ?? throw new ArgumentNullException(nameof(script));
 
         // Add header timestamp
         File.WriteAllText(fileName, "Log started: " + DateTime.Now);

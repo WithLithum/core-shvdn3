@@ -34,5 +34,5 @@ public enum BusySpinnerType
     /// <summary>
     /// Traditional at right side of the screen.
     /// </summary>
-    Right,
+    Right
 }

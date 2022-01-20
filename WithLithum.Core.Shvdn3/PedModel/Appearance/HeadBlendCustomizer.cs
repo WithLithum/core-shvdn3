@@ -6,7 +6,7 @@ namespace WithLithum.Core.PedModel.Appearance;
 using GTA;
 using System;
 using System.Collections.Generic;
-using WithLithum.Core.Exceptions;
+using Exceptions;
 
 /// <summary>
 /// Provides head blend customization to model <see cref="PedHash.FreemodeMale01"/> and <see cref="PedHash.FreemodeFemale01"/>.

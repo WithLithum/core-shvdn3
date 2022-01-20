@@ -3,11 +3,14 @@
 
 namespace WithLithum.Core.PedModel.Appearance;
 
+using JetBrains.Annotations;
+
 /// <summary>
 /// An enumeration of all possible head overlay types.
 /// </summary>
 /// <seealso cref="HeadOverlay"/>
 /// <seealso cref="HeadBlendCustomizer"/>
+[PublicAPI]
 public enum HeadOverlayType
 {
     /// <summary>

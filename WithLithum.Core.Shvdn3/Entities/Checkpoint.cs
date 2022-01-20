@@ -6,7 +6,7 @@ namespace WithLithum.Core.Entities;
 using GTA.Math;
 using JetBrains.Annotations;
 using System.Drawing;
-using WithLithum.Core.Util.Native;
+using Util.Native;
 
 /// <summary>
 /// Represents a checkpoint.
@@ -17,6 +17,7 @@ public class Checkpoint
     /// <summary>
     /// An enumeration of all possible styles of the checkpoint.
     /// </summary>
+    [PublicAPI]
     public enum Style
     {
         /// <summary>
@@ -159,17 +160,6 @@ public class Checkpoint
     {
     }
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Checkpoint"/> class.
-    /// </summary>
-    /// <param name="position">The position.</param>
-    /// <param name="color">The color.</param>
-    /// <param name="style">The style.</param>
-    /// <param name="scale">The size.</param>
-    /// <param name="arrowTarget">The target of the arrow, if have any.</param>
-    public Checkpoint(Vector3 position, Color color, Style style, float scale, Vector3 arrowTarget) : this(position, color, style, scale, arrowTarget, 0)
-    {
-    }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Checkpoint"/> class.
@@ -180,7 +170,7 @@ public class Checkpoint
     /// <param name="scale">The size.</param>
     /// <param name="arrowTarget">The target of the arrow, if have any.</param>
     /// <param name="number">The number to display, if have any.</param>
-    public Checkpoint(Vector3 position, Color color, Style style, float scale, Vector3 arrowTarget, int number)
+    public Checkpoint(Vector3 position, Color color, Style style, float scale, Vector3 arrowTarget, int number = 0)
     {
         Handle = Api.CreateCheckpoint((int)style, position.X, position.Y, position.Z, arrowTarget.X, arrowTarget.Y, arrowTarget.Z, scale, color.R, color.G, color.B, color.A, number);
     }
@@ -190,7 +180,9 @@ public class Checkpoint
     /// </summary>
     public int Handle { get; }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Deletes this instance.
+    /// </summary>
     public void Delete()
     {
         Api.DeleteCheckpoint(Handle);

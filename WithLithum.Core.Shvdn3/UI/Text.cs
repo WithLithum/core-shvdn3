@@ -3,9 +3,12 @@
 
 namespace WithLithum.Core.UI;
 
+using JetBrains.Annotations;
+
 /// <summary>
 /// Represents a substring text label, which replaces <c>~s~</c> in translatable texts.
 /// </summary>
+[PublicAPI]
 public abstract class Text
 {
     /// <summary>

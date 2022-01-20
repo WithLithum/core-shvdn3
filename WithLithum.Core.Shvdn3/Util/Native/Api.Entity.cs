@@ -7,7 +7,6 @@ using GTA.Math;
 using GTA.Native;
 using System;
 
-[CLSCompliant(false)]
 public static partial class Api
 {
     /// <summary>

@@ -4,7 +4,7 @@
 namespace WithLithum.Core.UI.Hud;
 
 using JetBrains.Annotations;
-using WithLithum.Core.Util.Native;
+using Util.Native;
 
 /// <summary>
 /// Provides utilities to manipulate the loading spinner.

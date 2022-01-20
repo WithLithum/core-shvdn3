@@ -3,9 +3,12 @@
 
 namespace WithLithum.Core.PedModel.Appearance;
 
+using JetBrains.Annotations;
+
 /// <summary>
 /// An enumeration of all possible face feature types.
 /// </summary>
+[PublicAPI]
 public enum FaceFeatureType
 {
     /// <summary>

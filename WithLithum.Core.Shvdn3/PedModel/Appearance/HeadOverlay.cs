@@ -5,11 +5,13 @@ namespace WithLithum.Core.PedModel.Appearance;
 
 using GTA.Native;
 using System;
-using WithLithum.Core.Exceptions;
+using Exceptions;
+using JetBrains.Annotations;
 
 /// <summary>
 /// Provides methods and properties to manipulate head overlay.
 /// </summary>
+[PublicAPI]
 public class HeadOverlay
 {
     private readonly HeadBlendCustomizer _customizer;

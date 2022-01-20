@@ -15,13 +15,12 @@ namespace WithLithum.Core.Entities.Decoration;
 public class DecoratorStack
 {
     private readonly Entity _owner;
-    private static bool _finalized;
 
     /// <summary>
     /// Gets a value indicating whether the decorator registration has already
     /// been finalized.
     /// </summary>
-    public static bool Finalized { get => _finalized; }
+    public static bool Finalized { get; private set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DecoratorStack"/> class.
@@ -66,7 +65,7 @@ public class DecoratorStack
     /// </summary>
     public static void FinalizeDecoratorRegistration()
     {
-        _finalized = true;
+        Finalized = true;
         Api.DecorRegisterLock();
     }
 

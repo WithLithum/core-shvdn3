@@ -4,7 +4,9 @@
 namespace WithLithum.Core.Logging;
 
 using GTA;
+using JetBrains.Annotations;
 using System;
+using System.Globalization;
 using System.IO;
 
 /// <summary>
@@ -13,6 +15,7 @@ using System.IO;
 /// <remarks>
 /// Logger instances are created by <see cref="LogManager"/>.
 /// </remarks>
+[PublicAPI]
 public class Logger
 {
     private readonly Script _owner;
@@ -80,8 +83,8 @@ public class Logger
     private string ParseFromPattern(string text, string level)
     {
         var result = _manager.Pattern;
-        result = result.Replace("{time}", DateTime.Now.ToString());
-        result = result.Replace("{timeutc}", DateTime.UtcNow.ToString());
+        result = result.Replace("{time}", DateTime.Now.ToString(CultureInfo.InvariantCulture));
+        result = result.Replace("{timeutc}", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture));
         result = result.Replace("{newline}", Environment.NewLine);
         result = result.Replace("{message}", text);
         result = result.Replace("{name}", Name);

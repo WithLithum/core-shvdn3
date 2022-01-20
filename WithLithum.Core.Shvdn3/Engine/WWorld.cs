@@ -5,7 +5,7 @@ namespace WithLithum.Core.Engine;
 
 using GTA.Math;
 using JetBrains.Annotations;
-using WithLithum.Core.Util.Native;
+using Util.Native;
 
 /// <summary>
 /// Provides utilities to manipulate world.

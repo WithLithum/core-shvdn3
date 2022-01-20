@@ -5,11 +5,13 @@ namespace WithLithum.Core.PedModel.Appearance;
 
 using GTA.Native;
 using System;
-using WithLithum.Core.Exceptions;
+using Exceptions;
+using JetBrains.Annotations;
 
 /// <summary>
 /// Provides methods and functions to manipulate ped head blend.
 /// </summary>
+[PublicAPI]
 public class HeadBlend
 {
     private readonly HeadBlendCustomizer _blendCustomizer;

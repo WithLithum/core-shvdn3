@@ -26,7 +26,7 @@ public enum InstructionalButtons
     /// <summary>
     /// An "OK" button.
     /// </summary>
-    OK = 2,
+    Ok = 2,
 
     /// <summary>
     /// Yes button.
