@@ -5,7 +5,12 @@ using System;
 using Attributing;
 using Exceptions;
 using Util.Native;
+using JetBrains.Annotations;
 
+/// <summary>
+/// Represents some additions to the ped.
+/// </summary>
+[PublicAPI]
 public class PedAttributor : IAttributor<Ped>
 {
     private Ped _internal;
