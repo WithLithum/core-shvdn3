@@ -3,13 +3,15 @@
 
 namespace WithLithum.Core.Engine.Gaming;
 
+using JetBrains.Annotations;
 using System;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
 /// Provides methods and properties to manipulate aspects of the game.
-/// Also provides utilties from the game engine.
+/// Also provides utilities from the game engine.
 /// </summary>
+[PublicAPI]
 public static class WGame
 {
     /// <summary>

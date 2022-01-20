@@ -3,9 +3,12 @@
 
 namespace WithLithum.Core.UI.Hud;
 
+using JetBrains.Annotations;
+
 /// <summary>
 /// An enumeration of all possible busy spinner types.
 /// </summary>
+[PublicAPI]
 public enum BusySpinnerType
 {
     /// <summary>

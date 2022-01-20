@@ -2,6 +2,7 @@
 // Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
 
 using GTA;
+using JetBrains.Annotations;
 using System;
 using WithLithum.Core.Util.Native;
 
@@ -10,6 +11,7 @@ namespace WithLithum.Core.Entities.Decoration;
 /// <summary>
 /// Provides utilities to manipulate decorators.
 /// </summary>
+[PublicAPI]
 public class DecoratorStack
 {
     private readonly Entity _owner;

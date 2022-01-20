@@ -3,11 +3,13 @@
 
 namespace WithLithum.Core.UI;
 
+using JetBrains.Annotations;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
 /// Represents a literal text. Also known as player name substring.
 /// </summary>
+[PublicAPI]
 public sealed class LiteralText : Text
 {
     /// <summary>

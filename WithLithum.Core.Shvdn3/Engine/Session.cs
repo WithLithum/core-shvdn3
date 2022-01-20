@@ -3,13 +3,15 @@
 
 namespace WithLithum.Core.Engine;
 
+using JetBrains.Annotations;
 using static WithLithum.Core.Util.Native.Api;
 using static WithLithum.Core.Util.NativeFunctions;
 
 /// <summary>
-/// Provides utilties to manipulate various session-related stuff in single/multi-player.
-/// Not intended for GTA Online.
+/// Provides utilities to manipulate various session-related stuff in single/multi-player.
+/// Not intended for GTA On-line.
 /// </summary>
+[PublicAPI]
 public static class Session
 {
     /// <summary>

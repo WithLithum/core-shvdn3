@@ -4,12 +4,14 @@
 namespace WithLithum.Core.Util.Native;
 
 using GTA.Native;
+using JetBrains.Annotations;
 
+[PublicAPI]
 public static partial class Api
 {
     /// <summary>
     /// This native converts its past string to hash. It is hashed using
-    /// jenkins one at a time method.
+    /// Jenkins-One-At-A-Time method.
     /// </summary>
     /// <param name="text">The string to hash.</param>
     /// <returns>The hash of string.</returns>

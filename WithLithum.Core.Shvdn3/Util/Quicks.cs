@@ -4,10 +4,12 @@
 namespace WithLithum.Core.Util;
 
 using GTA;
+using JetBrains.Annotations;
 
 /// <summary>
 /// Provide quick accesses. This class is meant to be imported using <c>using static</c>.
 /// </summary>
+[PublicAPI]
 public static class Quicks
 {
     /// <summary>

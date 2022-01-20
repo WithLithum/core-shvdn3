@@ -4,12 +4,14 @@
 namespace WithLithum.Core.Entities;
 
 using GTA.Math;
+using JetBrains.Annotations;
 using System.Drawing;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
 /// Represents a checkpoint.
 /// </summary>
+[PublicAPI]
 public class Checkpoint
 {
     /// <summary>

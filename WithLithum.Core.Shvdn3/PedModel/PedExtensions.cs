@@ -4,11 +4,13 @@
 namespace WithLithum.Core.PedModel;
 
 using GTA;
+using JetBrains.Annotations;
 using WithLithum.Core.PedModel.Appearance;
 
 /// <summary>
 /// Provide extension methods to <see cref="Ped"/> class.
 /// </summary>
+[PublicAPI]
 public static class PedExtensions
 {
     /// <summary>

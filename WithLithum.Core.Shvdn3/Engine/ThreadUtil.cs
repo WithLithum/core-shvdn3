@@ -3,11 +3,13 @@
 
 namespace WithLithum.Core.Engine;
 
+using JetBrains.Annotations;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
-/// Provides utilties to manipulate scripting.
+/// Provides utilities to manipulate scripting.
 /// </summary>
+[PublicAPI]
 public static class ThreadUtil
 {
     /// <summary>

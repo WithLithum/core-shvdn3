@@ -3,11 +3,13 @@
 
 namespace WithLithum.Core.UI.Hud;
 
+using JetBrains.Annotations;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
-/// Provides utilties to manipulate the loading spinner.
+/// Provides utilities to manipulate the loading spinner.
 /// </summary>
+[PublicAPI]
 public static class BusySpinner
 {
     /// <summary>

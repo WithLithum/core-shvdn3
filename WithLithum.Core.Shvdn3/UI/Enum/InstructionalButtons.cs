@@ -3,12 +3,14 @@
 
 namespace WithLithum.Core.UI.Enum;
 
+using JetBrains.Annotations;
 using System;
 
 /// <summary>
 /// An enumeration of all possible instructional buttons. Mix them manually.
 /// </summary>
 [Flags]
+[PublicAPI]
 public enum InstructionalButtons
 {
     /// <summary>

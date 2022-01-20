@@ -3,9 +3,12 @@
 
 namespace WithLithum.Core.Entities.Decoration;
 
+using JetBrains.Annotations;
+
 /// <summary>
 /// An enumeration of all possible types of an enumerator.
 /// </summary>
+[PublicAPI]
 public enum DecoratorType
 {
     /// <summary>

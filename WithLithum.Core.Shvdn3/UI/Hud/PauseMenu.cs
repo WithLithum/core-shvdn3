@@ -3,12 +3,14 @@
 
 namespace WithLithum.Core.UI.Hud;
 
+using JetBrains.Annotations;
 using System.Drawing;
 using WithLithum.Core.Util.Native;
 
 /// <summary>
 /// Provides methods and properties to manipulate Pause Menu.
 /// </summary>
+[PublicAPI]
 public static class PauseMenu
 {
     /// <summary>
