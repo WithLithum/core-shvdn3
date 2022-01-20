@@ -1,23 +1,18 @@
 ﻿namespace WithLithum.Core.Entities;
 
 using GTA;
-using JetBrains.Annotations;
 using System;
 using Attributing;
 using Exceptions;
 using Util.Native;
 
-/// <summary>
-/// Provides extensions of the entity class.
-/// </summary>
-[PublicAPI]
-public class EntityAttributor : IAttributor<Entity>
+public class PedAttributor : IAttributor<Ped>
 {
-    private Entity _internal;
+    private Ped _internal;
 
-    static EntityAttributor()
+    static PedAttributor()
     {
-        AttributorManager.RegisterAttributor<Entity, EntityAttributor>();
+        AttributorManager.RegisterAttributor<Ped, EntityAttributor>();
     }
 
     /// <summary>
@@ -29,7 +24,7 @@ public class EntityAttributor : IAttributor<Entity>
     }
 
     /// <inheritdoc />
-    public void Apply(Entity value)
+    public void Apply(Ped value)
     {
         if (value == null) throw new ArgumentNullException(nameof(value));
         if (!value.Exists()) throw new ArgumentException("Invalid value", nameof(value));
@@ -37,18 +32,17 @@ public class EntityAttributor : IAttributor<Entity>
         _internal = value;
     }
 
-    private Entity RequiresValid()
+    private Ped RequiresValid()
     {
         if (_internal?.Exists() != true) throw new InvalidPoolObjectException("Invalid internal!");
         return _internal;
     }
 
     /// <summary>
-    /// Sets the lights of this instance.
+    /// Blows the head of this instance.
     /// </summary>
-    /// <param name="value">Whether is on.</param>
-    public void SetLightsOn(bool value)
+    public void BlowHead()
     {
-        Api.SetEntityLights(RequiresValid().Handle, value);
+        Api.ExplodePedHead(RequiresValid().Handle, (uint)WeaponHash.Pistol);
     }
 }

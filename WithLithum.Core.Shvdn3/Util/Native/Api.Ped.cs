@@ -27,4 +27,12 @@ public static partial class Api
     /// <returns><i>No description provided.</i></returns>
     public static bool CanCreateRandomBikeRider()
         => Function.Call<bool>(Hash.CAN_CREATE_RANDOM_BIKE_RIDER);
+
+    /// <summary>
+    /// Forces the ped to fall back and kills it.
+    /// </summary>
+    /// <param name="ped"><i>No description provided.</i></param>
+    /// <param name="weaponHash"><i>No description provided.</i></param>
+    public static void ExplodePedHead(int /* Ped */ ped, uint weaponHash)
+        => Function.Call(Hash.EXPLODE_PED_HEAD, ped, weaponHash);
 }

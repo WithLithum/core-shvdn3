@@ -22,7 +22,7 @@ public static partial class Api
     /// </summary>
     /// <param name="entity">The entity.</param>
     /// <param name="toggle">when toggle is set to true it turns off the lights, when false it turns them on.</param>
-    public static void SetEntityLights(uint entity, bool toggle) => Function.Call(Hash.SET_ENTITY_LIGHTS, entity, toggle);
+    public static void SetEntityLights(int entity, bool toggle) => Function.Call(Hash.SET_ENTITY_LIGHTS, entity, toggle);
 
     /// <summary>
     /// <i>No description provided.</i>
