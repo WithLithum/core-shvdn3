@@ -16,6 +16,12 @@ public class DecoratorStack
     private static bool _finalized;
 
     /// <summary>
+    /// Gets a value indicating whether the decorator registration has already
+    /// been finalized.
+    /// </summary>
+    public static bool Finalized { get => _finalized; }
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="DecoratorStack"/> class.
     /// </summary>
     /// <param name="owner">The owner.</param>
@@ -44,7 +50,7 @@ public class DecoratorStack
     /// <exception cref="InvalidOperationException">Decorator registration has been finalized.</exception>
     public static void RegisterDecorator(string name, DecoratorType type)
     {
-        if (_finalized)
+        if (Finalized)
         {
             throw new InvalidOperationException("Decorator registration has been finalized.");
         }
