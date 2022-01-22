@@ -17,10 +17,40 @@ using WithLithum.Core.Exceptions;
 public static class PedExtensions
 {
     private static readonly Dictionary<Ped, HeadBlendCustomizer> _customizers = new();
+    private static readonly Dictionary<Ped, PedAttributor> _attributors = new();
+
+    /// <summary>
+    /// Receives an instance of <see cref="PedAttributor"/>.
+    /// </summary>
+    /// <param name="ped">The ped.</param>
+    /// <returns>An instance of <see cref="PedAttributor"/>.</returns>
+    /// <exception cref="ArgumentNullException">The ped was null.</exception>
+    /// <exception cref="InvalidPoolObjectException">The ped was invalid.</exception>
+    public static PedAttributor Attributor(this Ped ped)
+    {
+        if (ped == null)
+        {
+            _attributors.Remove(ped);
+            throw new ArgumentNullException(nameof(ped));
+        }
+
+        if (!ped.Exists())
+        {
+            _attributors.Remove(ped);
+            throw new InvalidPoolObjectException(ped);
+        }
+
+        if (!_attributors.ContainsKey(ped))
+        {
+            _attributors[ped] = new PedAttributor(ped);
+        }
+
+        return _attributors[ped];
+    }
 
     /// <summary>
     /// Receives an instance of <see cref="HeadBlendCustomizer"/> which can be used to edit the face features,
-    /// head blend datas, etc. of this instance.
+    /// head blend data, etc. of this instance.
     /// </summary>
     /// <param name="ped">The ped.</param>
     /// <returns>An instance of <see cref="HeadBlendCustomizer"/>. Multiple calls with the same instance will return the same instance.</returns>
