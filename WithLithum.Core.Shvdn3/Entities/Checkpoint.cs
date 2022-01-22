@@ -160,7 +160,6 @@ public class Checkpoint
     {
     }
 
-
     /// <summary>
     /// Initializes a new instance of the <see cref="Checkpoint"/> class.
     /// </summary>

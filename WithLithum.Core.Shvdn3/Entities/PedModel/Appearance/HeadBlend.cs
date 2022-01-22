@@ -3,10 +3,10 @@
 
 namespace WithLithum.Core.Entities.PedModel.Appearance;
 
-using GTA.Native;
-using System;
 using Exceptions;
+using GTA.Native;
 using JetBrains.Annotations;
+using System;
 
 /// <summary>
 /// Provides methods and functions to manipulate ped head blend.

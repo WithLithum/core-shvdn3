@@ -5,7 +5,6 @@ namespace WithLithum.Core.Util.Native;
 
 using GTA.Math;
 using GTA.Native;
-using System;
 
 public static partial class Api
 {

@@ -1,10 +1,9 @@
 ﻿namespace WithLithum.Core.Entities;
 
 using GTA;
-using System;
-using Exceptions;
-using Util.Native;
 using JetBrains.Annotations;
+using System;
+using Util.Native;
 
 /// <summary>
 /// Represents some additions to the ped.
