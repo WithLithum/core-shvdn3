@@ -68,6 +68,14 @@ public static class WWorld
     }
 
     /// <summary>
+    /// Clears the current focus.
+    /// </summary>
+    public static void ClearFocus()
+    {
+        Api.ClearFocus();
+    }
+
+    /// <summary>
     /// Gets a value indicating whether the game can create random drivers.
     /// </summary>
     public static bool CreatesRandomDriver => Api.CanCreateRandomDriver();

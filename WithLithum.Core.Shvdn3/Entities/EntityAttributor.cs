@@ -11,14 +11,9 @@ using Util.Native;
 /// Provides extensions of the entity class.
 /// </summary>
 [PublicAPI]
-public class EntityAttributor : IAttributor<Entity>
+public class EntityAttributor
 {
-    private Entity _internal;
-
-    static EntityAttributor()
-    {
-        AttributorManager.RegisterAttributor<Entity, EntityAttributor>();
-    }
+    private readonly Entity _internal;
 
     /// <summary>
     /// Initializes this instance.
@@ -28,8 +23,13 @@ public class EntityAttributor : IAttributor<Entity>
         // null-sub to trigger the static
     }
 
-    /// <inheritdoc />
-    public void Apply(Entity value)
+    /// <summary>
+    /// Initializes a new instance of the <see cref="EntityAttributor"/> class.
+    /// </summary>
+    /// <param name="value">The entity.</param>
+    /// <exception cref="ArgumentNullException">The entity is null.</exception>
+    /// <exception cref="ArgumentException">The entity is invalid.</exception>
+    public EntityAttributor(Entity value)
     {
         if (value == null) throw new ArgumentNullException(nameof(value));
         if (!value.Exists()) throw new ArgumentException("Invalid value", nameof(value));
@@ -37,10 +37,26 @@ public class EntityAttributor : IAttributor<Entity>
         _internal = value;
     }
 
-    private Entity RequiresValid()
+    /// <summary>
+    /// Returns a valid instance of an entity.
+    /// </summary>
+    /// <returns>A valid instance.</returns>
+    /// <exception cref="InvalidPoolObjectException">Instance is invalid.</exception>
+    protected Entity RequiresValid()
     {
         if (_internal?.Exists() != true) throw new InvalidPoolObjectException("Invalid internal!");
         return _internal;
+    }
+
+    /// <summary>
+    /// Determines whether this instance is the focus.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true"/> if this instance is focus; otherwise, <see langword="false"/>.
+    /// </returns>
+    public bool IsFocus()
+    {
+        return Api.IsEntityFocus(RequiresValid().Handle);
     }
 
     /// <summary>
