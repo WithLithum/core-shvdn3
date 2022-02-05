@@ -28,4 +28,11 @@ public static partial class Api
     /// </summary>
     public static void ClearFocus()
         => Function.Call(Hash.CLEAR_FOCUS);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <returns><i>No description provided.</i></returns>
+    public static int GetNumberOfEvents()
+        => Function.Call<int>(Hash.GET_NUMBER_OF_EVENTS);
 }

@@ -35,4 +35,11 @@ public static partial class Api
     /// parameter is false, the function does nothing at all.</param>
     public static void SetMissionFlag(bool value) =>
         Function.Call(Hash.SET_MISSION_FLAG, value);
+
+    /// <summary>
+    /// <i>No description provided.</i>
+    /// </summary>
+    /// <returns><i>No description provided.</i></returns>
+    public static bool QueueMissionRepeatLoad() =>
+        Function.Call<bool>(Hash.QUEUE_MISSION_REPEAT_LOAD);
 }

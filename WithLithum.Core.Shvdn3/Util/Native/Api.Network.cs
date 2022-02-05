@@ -27,4 +27,14 @@ public static partial class Api
     {
         return Function.Call<bool>(Hash.NETWORK_SESSION_IS_PRIVATE);
     }
+
+
+    /// <summary>
+    /// Returns whether the game is not in offline mode.
+    /// </summary>
+    /// <returns>Returns whether the game is not in offline mode.</returns>
+    public static bool NetworkIsSignedOnline()
+    {
+        return Function.Call<bool>(Hash.NETWORK_IS_SIGNED_ONLINE);
+    }
 }

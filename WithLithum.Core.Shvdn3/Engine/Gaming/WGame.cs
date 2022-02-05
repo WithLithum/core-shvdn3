@@ -15,6 +15,15 @@ using Util.Native;
 public static class WGame
 {
     /// <summary>
+    /// Gets a value indicating whether the game is connected to Rockstar Games Social
+    /// Club.
+    /// </summary>
+    /// <value>
+    /// <see langword="true"/> if the game is online; otherwise, <see langword="false"/>.
+    /// </value>
+    public static bool IsOnline => Api.NetworkIsSignedOnline();
+
+    /// <summary>
     /// Calculates Jenkins-One-At-A-Time hash based on the <paramref name="source"/> string.
     /// The hash is not case sensitive.
     /// </summary>
@@ -34,5 +43,22 @@ public static class WGame
     public static bool CreateRestorationPoint()
     {
         return Api.QueueMissionRepeatSave();
+    }
+
+    /// <summary>
+    /// Loads the restoration point created by <see cref="CreateRestorationPoint()"/>.
+    /// </summary>
+    public static void LoadRestorationPoint()
+    {
+        Api.QueueMissionRepeatLoad();
+    }
+
+    /// <summary>
+    /// Gets the amount of events currently being sent to scripts.
+    /// </summary>
+    /// <returns>The number of events.</returns>
+    public static int GetNumberOfEvents()
+    {
+        return Api.GetNumberOfEvents();
     }
 }
