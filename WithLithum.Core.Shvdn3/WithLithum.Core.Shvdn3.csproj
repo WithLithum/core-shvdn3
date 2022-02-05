@@ -55,14 +55,4 @@
     <PackageReference Include="ScriptHookVDotNet3" Version="3.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Dependencies\CoreCommon\WithLithum.Core.Common\WithLithum.Core.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ScriptHookVDotNet">
-      <HintPath>..\References\ScriptHookVDotNet.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
