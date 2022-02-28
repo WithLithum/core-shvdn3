@@ -11,18 +11,27 @@
     <PackageProjectUrl>https://gitlab.com/WithLithum/core-shvdn3</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://gitlab.com/WithLithum/core-shvdn3</RepositoryUrl>
-    <AssemblyVersion>0.2.1.0</AssemblyVersion>
-    <FileVersion>0.2.1.0</FileVersion>
-    <Version>0.2.1</Version>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
+    <Version>0.3.0-alpha</Version>
     <RootNamespace>WithLithum.Core</RootNamespace>
     <AssemblyName>WithLithum.Core.SHVDN3</AssemblyName>
     <CodeAnalysisRuleSet>..\.sonarlint\withlithum_core-shvdn3csharp.ruleset</CodeAnalysisRuleSet>
     <PackageIcon>LithiumDevCore.png</PackageIcon>
     <PackageTags>SHVDN Modding GTA5 Ldev-Official</PackageTags>
     <PackageReleaseNotes>Add quicks and some features (initial package release)</PackageReleaseNotes>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>AnyCPU;x64</Platforms>
+    <LangVersion>latest</LangVersion>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Programs\DevProjs\core-shvdn3\WithLithum.Core.Shvdn3\WithLithum.Core.SHVDN3.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DocumentationFile>C:\Programs\DevProjs\core-shvdn3\WithLithum.Core.Shvdn3\WithLithum.Core.SHVDN3.xml</DocumentationFile>
   </PropertyGroup>
 
@@ -38,7 +47,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ScriptHookVDotNet3" Version="3.3.2" />
+    <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+    <PackageReference Include="Roslynator.Analyzers" Version="3.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ScriptHookVDotNet3" Version="3.4.0" />
   </ItemGroup>
 
 </Project>

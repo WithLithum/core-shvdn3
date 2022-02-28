@@ -1,0 +1,73 @@
+﻿// Copyright (C) WithLithum & contributors 2021-2022.
+// Licensed under LGPL-3.0-or-later license. See LICENSE for more info.
+
+using GTA;
+using JetBrains.Annotations;
+using System;
+using WithLithum.Core.Util.Native;
+
+namespace WithLithum.Core.Entities.Decoration;
+
+/// <summary>
+/// Provides utilities to manipulate decorators.
+/// </summary>
+[PublicAPI]
+public class DecoratorStack
+{
+    private readonly Entity _owner;
+
+    /// <summary>
+    /// Gets a value indicating whether the decorator registration has already
+    /// been finalized.
+    /// </summary>
+    public static bool Finalized { get; private set; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DecoratorStack"/> class.
+    /// </summary>
+    /// <param name="owner">The owner.</param>
+    public DecoratorStack(Entity owner)
+    {
+        _owner = owner;
+    }
+
+    /// <summary>
+    /// Determines whether the specified decorator exists in this instance.
+    /// </summary>
+    /// <param name="name">The name to check.</param>
+    /// <returns><see langword="true"/> if the specified decorator exists; otherwise, <see langword="false"/>.</returns>
+    public bool Contains(string name)
+    {
+        return Api.DecorExistOn(_owner.Handle, name);
+    }
+
+    #region Static (Global) Methods
+
+    /// <summary>
+    /// Represents a decorator to the game engine.
+    /// </summary>
+    /// <param name="name">The name of the decorator.</param>
+    /// <param name="type">The type of the decorator.</param>
+    /// <exception cref="InvalidOperationException">Decorator registration has been finalized.</exception>
+    public static void RegisterDecorator(string name, DecoratorType type)
+    {
+        if (Finalized)
+        {
+            throw new InvalidOperationException("Decorator registration has been finalized.");
+        }
+
+        Api.DecorRegister(name, (int)type);
+    }
+
+    /// <summary>
+    /// Finalizes the registration process of decorators.
+    /// Further decorator registration is invalid and will result in an exception.
+    /// </summary>
+    public static void FinalizeDecoratorRegistration()
+    {
+        Finalized = true;
+        Api.DecorRegisterLock();
+    }
+
+    #endregion Static (Global) Methods
+}

@@ -13,6 +13,11 @@ All contributions are welcome and appreciated. To contribute to this project, yo
 
 **Please refrain from contributing on GitHub. Repository on GitHub is just a read-only mirror that syncs a commit in five minutes after push and Pull Requests there will be closed without any further warning. To contribute, please use GitLab.**
 
+Do not use GitHub for contribution. Please go over [GitLab](https://gitlab.com/WithLithum/core-shvdn3) to contribute.
+Pull requests on GitHub will be closed without a warning, whether it's security critical or fixes a very emergency bug.
+
+For details regarding how to set up your environment for development, see [building guides.](BUILDING.md)
+
 ## License
 
 This project is licensed under **GNU General Public License 3.0**. You can apply any later version if you prefer.
